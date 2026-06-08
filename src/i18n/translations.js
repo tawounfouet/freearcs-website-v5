@@ -108,7 +108,9 @@ export const translations = {
       statsInternational: "International",
       statsZonesCovered: "Zones couvertes",
       statsZonesText: "Europe – Afrique – Amériques – Asie",
-      trustHeading: "Ils nous font confiance"
+      trustHeading: "Ils nous font confiance",
+      statsProjects: "Plus de 30 projets cliniques supervisés",
+      statsRetention: "Taux de fidélisation client"
     },
     about: {
       title: "Qui sommes-nous ? Freearcs Pharma Services, CRO française indépendante",
@@ -349,8 +351,8 @@ export const translations = {
       // Notre approche
       approachTitle: "Notre approche",
       approachSubtitle: "Un accompagnement humain, main dans la main avec vos équipes.",
-      approachItem1: "Nous prenons le temps de comprendre votre technologie, vos contraintes et vos enjeux avant toute proposition.",
-      approachItem2: "Nous travaillons en transparence avec vos équipes, sans les écarter du pilotage.",
+      approachItem1: "Avant toute proposition, nous prenons le temps d'écouter : votre projet, vos contraintes, votre équipe interne, vos enjeux et votre maturité opérationnelle. Cette étape est gratuite et sans engagement.",
+      approachItem2: "Nous co-construisons un périmètre d'intervention adapté et transparent : du conseil ponctuel au pilotage de bout en bout. Vous gardez toujours la main sur les arbitrages stratégiques.",
       approachItem3: "Nous expliquons chaque étape réglementaire et opérationnelle, pour que vous gardiez la maîtrise scientifique et la maîtrise réglementaire de votre projet.",
       approachQuote: "\u00ab Les \u00e9quipes des biotechs sont expertes sur leur technologie, mais souvent perdues sur la partie r\u00e9glementaire. Notre travail, c'est de vous aider \u00e0 comprendre et anticiper ces \u00e9tapes, pour que le projet avance sereinement et suivant la r\u00e9glementation. \u00bb",
       approachQuoteAuthor: "\u2014 Nad\u00e8ge KAMBOU, Fondatrice",
@@ -901,8 +903,8 @@ export const translations = {
       // Our approach
       approachTitle: "Our Approach",
       approachSubtitle: "Human support, hand in hand with your teams.",
-      approachItem1: "We take the time to understand your technology, your constraints and your stakes before making any proposal.",
-      approachItem2: "We work transparently with your teams, without sidelining them from project management.",
+      approachItem1: "Before any proposal, we take the time to listen: your project, your constraints, your internal team, your stakes, and your operational maturity. This step is free and without obligation.",
+      approachItem2: "We co-build a tailored and transparent scope of intervention: from one-off consulting to end-to-end project management. You always retain control over strategic decisions.",
       approachItem3: "We explain every regulatory and operational step, so you maintain scientific and regulatory control of your project.",
       approachQuote: "Biotech teams are experts in their technology, but often lost on the regulatory side. Our job is to help you understand and anticipate these steps, so the project can move forward smoothly and in compliance.",
       approachQuoteAuthor: "\u2014 Nad\u00e8ge KAMBOU, Founder",
