@@ -233,6 +233,7 @@ export const translations = {
       ],
       whatWeProvideTitle: "Ce que nous fournissons",
       regulatoryFrameworkTitle: "Cadre Réglementaire",
+      regulatoryTitle: "Le cadre réglementaire",
       targetRegions: [
         { name: "États-Unis", flag: "🇺🇸" },
         { name: "Asie", flag: "🌏" },
@@ -358,8 +359,8 @@ export const translations = {
       approachQuoteAuthor: "\u2014 Nad\u00e8ge KAMBOU, Fondatrice",
 
       // 5 engagements
-      commitmentsTitle: "5 engagements",
-      commitment1Title: "Agile et flexible",
+      commitmentsTitle: "Cinq engagements",
+      commitment1Title: "Modèle CRO agile et flexible",
       commitment1Text: "Une structure ind\u00e9pendante, sans cha\u00eene hi\u00e9rarchique \u00e9tendue. Vous avez un interlocuteur direct qui conna\u00eet votre \u00e9tude, et nous adaptons notre organisation \u00e0 l'\u00e9volution de votre projet.",
       commitment2Title: "M\u00e9thodes \u00e9prouv\u00e9es sur protocoles complexes",
       commitment2Text: "Phase I, \u00e9tudes pivots, oncologie, maladies rares ; des protocoles sur lesquels nos \u00e9quipes d\u00e9veloppent une expertise durable, transmise et capitalis\u00e9e projet apr\u00e8s projet.",
@@ -649,7 +650,9 @@ export const translations = {
       statsInternational: "International",
       statsZonesCovered: "Zones covered",
       statsZonesText: "Europe – Africa – Americas – Asia",
-      trustHeading: "They trust us"
+      trustHeading: "They trust us",
+      statsProjects: "Over 30 clinical projects supervised",
+      statsRetention: "Client retention rate"
     },
     about: {
       title: "Freearcs Pharma Services - Independent French CRO",
@@ -778,6 +781,7 @@ export const translations = {
       ],
       whatWeProvideTitle: "What we provide",
       regulatoryFrameworkTitle: "Regulatory Framework",
+      regulatoryTitle: "The regulatory framework",
       targetRegions: [
         { name: "United States", flag: "🇺🇸" },
         { name: "Asia", flag: "🌏" },
