@@ -383,7 +383,7 @@ export const translations = {
       diffCol1Text3: "Nous mettons en \u0153uvre un cadre qualit\u00e9 adapt\u00e9 au p\u00e9rim\u00e8tre de notre intervention, conforme aux Bonnes Pratiques Cliniques et aux exigences r\u00e9glementaires applicables.",
       diffCol2Title: "La dimension p\u00e9dagogique",
       diffCol2Subtitle: "Comprendre pour d\u00e9cider en toute autonomie.",
-      diffCol2Text: "L'accompagnement Freearcs Pharma Services inclut une dimension p\u00e9dagogique. Sur la base des besoins identifi\u00e9s avec vous, nous proposons des formations sur mesure pour que vos \u00e9quipes :",
+      diffCol2Text: "Notre accompagnement inclut une dimension p\u00e9dagogique sur la base des besoins identifi\u00e9s avec vous, nous proposons des formations sur mesure pour que vos \u00e9quipes :",
       diffCol2Item1: "Comprennent le cadre r\u00e9glementaire applicable \u00e0 votre projet",
       diffCol2Item2: "Anticipent les \u00e9tapes critiques (soumissions, autorisations, d\u00e9lais d'inclusion, conventions hospitali\u00e8res)",
       diffCol2Item3: "Pilotent le d\u00e9veloppement de votre technologie en toute ma\u00eetrise r\u00e9glementaire et scientifique",
