@@ -258,6 +258,7 @@ export const translations = {
         items: ["Dermatologie", "Maladies infectieuses et vaccins", "Pneumologie (BPCO)", "Rhumatologie", "Cardiologie"]
       },
       discuss: "Discutez de votre aire thérapeutique",
+      intro: "Nous accompagnons nos partenaires dans la conduite d'études interventionnelles, observationnelles et épidémiologiques, incluant les projets de données de vie réelle. Nous couvrons l'ensemble des aires thérapeutiques pour les médicaments, les dispositifs médicaux et les produits hors santé.",
       introText: "Expertise thérapeutique complète dans les domaines de haute complexité, avec une expérience approfondie en oncologie, troubles du SNC, maladies rares et au-delà.",
       priorityArea: "Domaine prioritaire",
       statsProjects: "Projets cliniques",
