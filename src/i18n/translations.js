@@ -151,7 +151,15 @@ export const translations = {
       therapeuticAreasTitle: "Expérience Thérapeutique Clé",
       therapeuticAreas: ["Oncologie", "Alzheimer", "Pédiatrie", "SNC", "Maladies Rares"],
       bioTitle: "Parcours & Expertise",
-      quote: "Allier expertise réglementaire et proximité humaine — c'est la conviction qui a guidé la création de Freearcs Pharma Services."
+      quote: "Allier expertise réglementaire et proximité humaine — c'est la conviction qui a guidé la création de Freearcs Pharma Services.",
+      heroSubtitle: "Une décennie d'expérience au service de l'innovation clinique",
+      convictionsTitle: "Mes convictions",
+      convictionsIntro: "Trois principes qui guident chacune de mes missions.",
+      convictions: [
+        { title: "Une CRO n'est pas un sous-traitant — c'est un partenaire stratégique.", text: "La qualité d'une étude clinique ne se mesure pas à l'exécution seule. Elle se construit dans le dialogue entre le promoteur et la CRO, à chaque étape." },
+        { title: "La rigueur sans pédagogie n'a pas de sens.", text: "Mon rôle n'est pas seulement d'exécuter l'étude, mais aussi d'enseigner, pour que mes partenaires comprennent et défendent chaque décision réglementaire et opérationnelle prise sur leur projet." },
+        { title: "Chaque promoteur mérite un accompagnement adapté à sa réalité.", text: "Biotech en phase précoce, laboratoire établi, medtech innovant ou acteur académique : les besoins ne sont pas les mêmes. Le cadre méthodologique non plus." }
+      ]
     },
     services: {
       title: "Services CRO — De la soumission réglementaire au monitoring de site",
