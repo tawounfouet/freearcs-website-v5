@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { MapPin, Mail, Phone, Linkedin } from 'lucide-react';
 
-const LOGO_URL = "/freearcs-pharma-services_logo-white.svg";
+const LOGO_URL = "/logo-white-freearcs.svg";
 
 
 
@@ -35,12 +35,12 @@ const Footer = () => {
             </Link>
             <div className="flex items-center space-x-2 text-white/70 text-sm">
               <MapPin className="w-4 h-4 flex-shrink-0" />
-              <span>50 Avenue des Champs-Élysées, 75008 Paris</span>
+              <span>50 Avenue des Champs-Élysées,<br />75008 Paris – France</span>
             </div>
             {/* AFCROs Member Badge */}
-            <div className="mt-5 flex items-center space-x-2 bg-white/10 rounded-lg py-2 px-3 inline-flex">
-              <img src="/AFCROs.png" alt="AFCROs" className="h-6 w-auto" />
-              <span className="text-xs text-white/80">Membre AFCROs</span>
+            <div className="mt-5 bg-white/10 rounded-lg py-3 px-4 inline-flex items-center gap-3">
+              <span className="text-sm text-white/80 font-medium">Membre</span>
+              <img src="/logo_AFCROs.png" alt="AFCROs" className="h-16 w-auto" />
             </div>
           </div>
 

@@ -7,7 +7,7 @@ export const translations = {
       founder: "Notre Fondatrice",
       whyChooseUs: "Pourquoi nous choisir ?",
       services: "Services",
-      allServices: "Tous nos services",
+      allServices: "Nos Services",
       legalRepresentation: "Représentation légale dans l'UE",
       therapeuticExpertise: "Expertise Thérapeutique",
       references: "Références",
@@ -181,7 +181,18 @@ export const translations = {
         "Mécanismes first-in-class",
         "Études avec inclusion adolescente"
       ],
-      ansmReducedTimeline: "Réduit le délai d'autorisation de 106 jours à 49 jours — ou 14 jours sans questions"
+      ansmReducedTimeline: "Réduit le délai d'autorisation de 106 jours à 49 jours — ou 14 jours sans questions",
+      seeMissions: "Voir les missions",
+      operationalModelTitle: "Notre Modèle Opérationnel",
+      operationalModelIntro: "Une CRO qui s'adapte à votre organisation. Deux modalités d'engagement, selon votre étude, votre équipe et votre maturité opérationnelle.",
+      integratedModelTitle: "Modèle intégré",
+      integratedModelSubtitle: "Internalisation",
+      integratedModelText: "Freearcs Pharma Services prend en charge l'étude de bout en bout sous sa propre gouvernance. Pilotage, exécution opérationnelle, monitoring, reporting réglementaire. Vous gardez la supervision stratégique, nous portons l'exécution.",
+      embeddedModelTitle: "Intégration dans vos équipes",
+      embeddedModelSubtitle: "Outsourcing",
+      embeddedModelText: "Nos experts s'intègrent dans votre organisation, sous votre gouvernance, comme une extension senior de votre équipe interne. Indiqué pour les promoteurs qui veulent renforcer leur capacité d'exécution sans sous-traiter le pilotage.",
+      domainsTitle: "Nos domaines d'intervention",
+      domainsIntro: "Six piliers opérationnels au service de vos études cliniques. Cliquez sur un pilier pour découvrir toutes les missions associées."
     },
     legalRepresentation: {
       title: "Représentant Légal dans l'UE pour les Promoteurs Non-UE",
@@ -415,6 +426,7 @@ export const translations = {
   },
   en: {
     nav: {
+      home: "Home",
       about: "About",
       visionMission: "About Us",
       founder: "Our Founder",
@@ -439,7 +451,10 @@ export const translations = {
       ctaExplore: "Explore Our Services",
       memberOf: "Member of ",
       whoWeAre: "Who We Are",
+      whoWeAreTagline: "Freearcs Pharma Services, the agile extension of your clinical team.",
       whoWeAreText: "Freearcs Pharma Services is an independent French CRO supporting partners in the conduct of clinical studies across all phases. The company combines operational agility with high-level expertise and works closely with sponsors, investigators, and research teams. Founded by Nadège KAMBOU, with over 10 years of international clinical research experience at leading CROs and pharmaceutical companies.",
+      whoWeAreText2: "Our hybrid model combines the rigour of international standards with the flexibility of an independent structure.",
+      whoWeAreLink: "Learn more about Freearcs Pharma Services",
       meetFounder: "Meet our Founder",
       whatWeDo: "What We Do",
       whatWeDoText: "Freearcs Pharma Services supports clinical studies from preparation to execution, ensuring regulatory compliance, operational efficiency, and high-quality delivery — from Phase I early development to Phase IV post-marketing studies.",
@@ -504,7 +519,21 @@ export const translations = {
         text: "Freearcs Pharma Services supports sponsors in preparing and submitting eligibility requests under the national fast-track scheme, reducing authorisation timelines from 106 days to 49 days — or 14 days when no questions are raised.",
         procedures: "Freearcs Pharma Services supports: preparation and submission of eligibility requests under the national fast-track scheme. Phase I and I/II mononational studies targeting serious or rare diseases, first-in-class mechanisms, and adolescent inclusion."
       },
-      talkToUs: "Talk to us about your clinical study."
+      talkToUs: "Talk to us about your clinical study.",
+      heroSlide1Title1: "Independent CRO,",
+      heroSlide1Title2: "agile and human",
+      heroSlide1Subtitle: "Freearcs Pharma Services supports biotechs, medtechs, laboratories and academic sponsors in conducting their clinical studies.",
+      heroSlide2Title1: "Expanding therapeutic choice",
+      heroSlide2Title2: "for every patient.",
+      heroSlide2Subtitle: "Because every disease can be effectively managed, we combine our expertise with yours to offer each patient an adapted therapeutic solution.",
+      heroSlide3Title1: "A comprehensive scope",
+      heroSlide3Title2: "for your clinical studies.",
+      heroSlide3Subtitle: "Medicinal products, medical devices and non-health products. Interventional, observational and real-world studies.",
+      statsSince2020: "Since 2020",
+      statsInternational: "International",
+      statsZonesCovered: "Zones covered",
+      statsZonesText: "Europe – Africa – Americas – Asia",
+      trustHeading: "They trust us"
     },
     about: {
       title: "Freearcs Pharma Services - Independent French CRO",
@@ -525,7 +554,9 @@ export const translations = {
         "Flexibility and deadline respect"
       ],
       meetFounder: "Meet our Founder",
-      memberOf: "Member of "
+      memberOf: "Member of ",
+      ctaTitle: "Are you preparing a clinical study?",
+      ctaButton: "Discuss Your Project"
     },
     founder: {
       title: "Nadège KAMBOU - Founder and Director of Operations",
@@ -541,7 +572,15 @@ export const translations = {
       therapeuticAreasTitle: "Key Therapeutic Experience",
       therapeuticAreas: ["Oncology", "Alzheimer's", "Pediatrics", "CNS", "Rare Diseases"],
       bioTitle: "Background & Expertise",
-      quote: "Combining regulatory expertise with a human approach — that is the conviction that guided the creation of Freearcs Pharma Services."
+      quote: "Combining regulatory expertise with a human approach — that is the conviction that guided the creation of Freearcs Pharma Services.",
+      heroSubtitle: "A decade of experience serving clinical innovation",
+      convictionsTitle: "My Convictions",
+      convictionsIntro: "Three principles guiding every mission I undertake.",
+      convictions: [
+        { title: "A CRO is not a subcontractor — it's a strategic partner.", text: "The quality of a clinical study is not measured by execution alone. It is built through dialogue between the sponsor and the CRO, at every step." },
+        { title: "Rigor without education makes no sense.", text: "My role is not only to execute the study, but also to teach, so that my partners understand and defend every regulatory and operational decision made on their project." },
+        { title: "Every sponsor deserves support tailored to their reality.", text: "Early-stage biotech, established laboratory, innovative medtech or academic player: needs are not the same. Neither is the methodological framework." }
+      ]
     },
     services: {
       title: "CRO Services - From Regulatory Submission to Site Monitoring",
@@ -587,7 +626,18 @@ export const translations = {
         "First-in-class mechanisms",
         "Adolescent inclusion studies"
       ],
-      ansmReducedTimeline: "Reduces authorisation timeline from 106 days to 49 days — or 14 days when no questions raised"
+      ansmReducedTimeline: "Reduces authorisation timeline from 106 days to 49 days — or 14 days when no questions raised",
+      operationalModelTitle: "Our Operational Model",
+      operationalModelIntro: "A CRO that adapts to your organisation. Two engagement models, depending on your study, your team and your operational maturity.",
+      integratedModelTitle: "Integrated Model",
+      integratedModelSubtitle: "Full-service execution",
+      integratedModelText: "Freearcs Pharma Services manages the study end-to-end under its own governance. Strategic oversight, operational execution, monitoring, regulatory reporting. You retain strategic supervision, we carry out the execution.",
+      embeddedModelTitle: "Embedded in Your Team",
+      embeddedModelSubtitle: "Outsourcing",
+      embeddedModelText: "Our experts integrate into your organisation, under your governance, as a senior extension of your internal team. Ideal for sponsors who want to strengthen their execution capacity without outsourcing oversight.",
+      domainsTitle: "Our Areas of Expertise",
+      domainsIntro: "Six operational pillars at the service of your clinical studies. Click on a pillar to discover all associated missions.",
+      seeMissions: "View missions"
     },
     legalRepresentation: {
       title: "Legal Representative in the EU for Non-EU Sponsors",
@@ -641,7 +691,14 @@ export const translations = {
       statsProjects: "Clinical Projects",
       statsAreas: "Therapeutic Areas",
       statsPhases: "All Study Phases",
-      statsRegulatory: "Regulatory Expertise"
+      statsRegulatory: "Regulatory Expertise",
+      heroSubtitle: "Oncology, CNS, rare diseases, in France and internationally.",
+      intro: "We support our partners in conducting interventional, observational and epidemiological studies, including real-world data projects. We cover all therapeutic areas for medicinal products, medical devices, and non-health products.",
+      studyTypesTitle: "Study Types",
+      studyTypesIntro: "Four engagement models tailored to your development stage.",
+      perimetersTitle: "Study Perimeters",
+      areasTitle: "Therapeutic Areas",
+      areasIntro: "All areas where we have supported our partners."
     },
     whyChooseUs: {
       title: "Why Choose Freearcs Pharma Services as Your CRO Partner",
@@ -788,6 +845,15 @@ export const translations = {
         uploadHint: "PDF, DOC, DOCX up to 10MB",
         anotherMessage: "Send Another Message"
       },
+      firstName: "First name",
+      firstNamePlaceholder: "Marie",
+      organisation: "Organisation",
+      organisationPlaceholder: "Biotech / Laboratory / Academic...",
+      fonction: "Position",
+      fonctionPlaceholder: "R&D Director, Clinical Project Manager...",
+      rgpdConsent: "I accept the",
+      careersTitle: "Careers",
+      careersText: "Send your application to",
       successTitle: "Message Sent!",
       successText: "Thank you for contacting Freearcs Pharma Services. We will get back to you within 24–48 hours.",
       contactInfoTitle: "Contact Information",

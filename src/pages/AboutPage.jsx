@@ -2,14 +2,12 @@ import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
-import { Eye, Target, Sparkles, Users, User, ArrowRight } from 'lucide-react';
+import { User, ArrowRight } from 'lucide-react';
 import SEO from '@/components/SEO';
 import FloatingCTA from '../components/FloatingCTA';
 
 const VISION_IMAGE = "/main-ampoule-succes.webp";
 const MISSION_IMAGE = "/famille-tablette-capsules.webp";
-
-const VALUE_ICONS = [Users, Sparkles, Eye, Target];
 
 const AboutPage = () => {
   const { t } = useLanguage();
@@ -37,13 +35,13 @@ const AboutPage = () => {
             <div className="w-full text-center">
               <div className="overflow-hidden">
                 <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-bold mb-0 leading-none">
-                  Qui sommes-nous ?
+                  {t('about.metaTitle')}
                 </h1>
                 <div className="mt-4 flex flex-col sm:flex-row sm:items-center justify-center gap-4 sm:gap-2">
                   <div className="flex items-center justify-center gap-2 text-white/80 font-bold text-lg">
-                    <Link to="/" className="text-white hover:text-white/80 transition-colors">Accueil</Link>
+                    <Link to="/" className="text-white hover:text-white/80 transition-colors">{t('nav.home')}</Link>
                     <span className="text-white/60">/</span>
-                    <span className="text-white">Qui sommes-nous ?</span>
+                    <span className="text-white">{t('about.metaTitle')}</span>
                   </div>
                 </div>
                 <p className="text-white/90 text-lg italic mt-4">
@@ -51,32 +49,6 @@ const AboutPage = () => {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Présentation (Company Overview) ────────────────────────────── */}
-      <section className="py-16 lg:py-24 bg-[#F9FAFD]">
-        <div className="max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="text-center">
-            <h3 className="text-2xl md:text-3xl font-bold text-[#573D4E]">Présentation</h3>
-            <div className="w-16 h-1 bg-[#2E9013] mx-auto mt-4 mb-8"></div>
-          </div>
-
-          <div className="bg-white p-8 md:p-12 lg:p-16 rounded-xl shadow-sm">
-            <p className="text-[#4B5563] text-lg leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:text-[#2E9013] first-letter:mr-3 first-letter:float-left">
-              {t('about.intro')}
-            </p>
-
-            <p className="text-[#4B5563] text-lg leading-relaxed mt-6">
-              {t('about.introText2')}
-            </p>
-
-            <blockquote className="my-10 ml-0 lg:ml-12 border-l-4 border-[#2E9013] pl-6 max-w-4xl">
-              <h5 className="font-medium text-xl md:text-2xl text-[#573D4E] italic leading-relaxed">
-                "{t('about.introText3')}"
-              </h5>
-            </blockquote>
           </div>
         </div>
       </section>
@@ -99,7 +71,7 @@ const AboutPage = () => {
                   <h2 className="font-raleway text-2xl md:text-3xl font-bold text-[#573D4E] mb-5">
                     {t('about.visionTitle')}
                   </h2>
-                  <p className="text-[#4B5563] text-lg leading-relaxed mb-8">
+                  <p className="text-[#4B5563] text-lg leading-relaxed mb-8 text-justify">
                     {t('about.visionText')}
                   </p>
                   <Link
@@ -125,7 +97,7 @@ const AboutPage = () => {
                   <h2 className="font-raleway text-2xl md:text-3xl font-bold text-[#573D4E] mb-5">
                     {t('about.missionTitle')}
                   </h2>
-                  <p className="text-[#4B5563] text-lg leading-relaxed mb-5">
+                  <p className="text-[#4B5563] text-lg leading-relaxed mb-5 text-justify">
                     {t('about.missionText')}
                   </p>
                   <p className="text-[#2E9013] text-lg italic font-semibold mb-8">
@@ -135,7 +107,7 @@ const AboutPage = () => {
                     to="/contact"
                     className="inline-flex items-center gap-2 text-[#573D4E] font-bold hover:text-[#2E9013] transition-colors"
                   >
-                    Discutons de votre projet <ArrowRight className="w-4 h-4" />
+                    {t('about.ctaButton')} <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>
@@ -157,28 +129,22 @@ const AboutPage = () => {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => {
-              const Icon = VALUE_ICONS[index % VALUE_ICONS.length];
-              return (
-                <div key={value.title} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-6 flex flex-col">
-                  <div className="w-12 h-12 rounded-full bg-[#EDE8EB] flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-[#573D4E]" />
-                  </div>
-                  <h5 className="font-raleway text-xl font-bold text-[#573D4E] mb-3">
-                    {value.title}
-                  </h5>
-                  <p className="text-[#4B5563] text-base leading-relaxed">
-                    {value.text}
-                  </p>
-                </div>
-              );
-            })}
+            {values.map((value) => (
+              <div key={value.title} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-6 flex flex-col">
+                <h5 className="font-raleway text-xl font-bold text-[#573D4E] mb-3">
+                  {value.title}
+                </h5>
+                <p className="text-[#4B5563] text-base leading-relaxed text-justify">
+                  {value.text}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       <FloatingCTA
-        label="Rencontrer notre Fondatrice"
+        label={t('about.meetFounder')}
         href="/about/founder"
         triggerRef={visionMissionRef}
         MobileIcon={User}

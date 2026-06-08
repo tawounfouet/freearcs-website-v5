@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { useLanguage } from "../context/LanguageContext";
 
 export const SEO = ({
   title,
@@ -6,8 +7,9 @@ export const SEO = ({
   image,
   url = "/",
   type = "website",
-  locale = "fr_FR",
 }) => {
+  const { language } = useLanguage();
+  const locale = language === "fr" ? "fr_FR" : "en_US";
   const siteUrl = "https://freearcs-pharma.com";
   const fullUrl = url.startsWith("http") ? url : `${siteUrl}${url}`;
   const defaultImage = "/freearcs-pharma-services_logo-white.svg";

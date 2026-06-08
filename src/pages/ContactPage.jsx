@@ -6,7 +6,7 @@ import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { Label } from '../components/ui/label';
 import { Card, CardContent } from '../components/ui/card';
-import { Send, CheckCircle, Briefcase, Mail, Phone, MapPin } from 'lucide-react';
+import { Send, CheckCircle, Briefcase, Mail } from 'lucide-react';
 import SEO from '@/components/SEO';
 
 const SUBJECT_OPTIONS = [
@@ -22,7 +22,8 @@ const ContactPage = () => {
   const { t } = useLanguage();
   const [searchParams] = useSearchParams();
   const [formData, setFormData] = useState({
-    fullName: '',
+    firstName: '',
+    name: '',
     email: '',
     organisation: '',
     fonction: '',
@@ -112,67 +113,79 @@ const ContactPage = () => {
             <div className="w-full lg:w-3/5">
               <Card className="shadow-xl">
                 <CardContent className="p-8">
-                  <h2 className="text-xl font-bold text-[#573D4E] mb-6">Votre message</h2>
+                  <h2 className="text-xl font-bold text-[#573D4E] mb-6">Discutons de votre projet</h2>
                   <form onSubmit={handleSubmit} className="space-y-5" data-testid="contact-form">
 
-                    {/* Nom et prénom */}
-                    <div className="space-y-2">
-                      <Label htmlFor="fullName">Nom et prénom *</Label>
-                      <Input
-                        id="fullName" name="fullName" type="text" required
-                        placeholder="Nadège KAMBOU"
-                        value={formData.fullName} onChange={handleChange}
-                        className="border-gray-300 focus:border-[#2E9013] focus:ring-[#2E9013]"
-                        data-testid="contact-fullname-input"
-                      />
+                    {/* Prénom + Nom */}
+                    <div className="grid md:grid-cols-2 gap-5">
+                      <div className="space-y-2">
+                        <Label htmlFor="firstName">{t('contact.firstName')} *</Label>
+                        <Input
+                          id="firstName" name="firstName" type="text" required
+                          placeholder={t('contact.firstNamePlaceholder')}
+                          value={formData.firstName} onChange={handleChange}
+                          className="border-gray-300 focus:border-[#2E9013] focus:ring-[#2E9013]"
+                          data-testid="contact-firstname-input"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="name">{t('contact.form.name')} *</Label>
+                        <Input
+                          id="name" name="name" type="text" required
+                          placeholder={t('contact.form.namePlaceholder')}
+                          value={formData.name} onChange={handleChange}
+                          className="border-gray-300 focus:border-[#2E9013] focus:ring-[#2E9013]"
+                          data-testid="contact-name-input"
+                        />
+                      </div>
                     </div>
 
-                    {/* Email professionnel */}
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Adresse e-mail professionnelle *</Label>
-                      <Input
-                        id="email" name="email" type="email" required
-                        placeholder="nom@organisation.com"
-                        value={formData.email} onChange={handleChange}
-                        className="border-gray-300 focus:border-[#2E9013] focus:ring-[#2E9013]"
-                        data-testid="contact-email-input"
-                      />
+                    {/* Email + Téléphone */}
+                    <div className="grid md:grid-cols-2 gap-5">
+                      <div className="space-y-2">
+                        <Label htmlFor="email">{t('contact.form.email')} *</Label>
+                        <Input
+                          id="email" name="email" type="email" required
+                          placeholder={t('contact.form.emailPlaceholder')}
+                          value={formData.email} onChange={handleChange}
+                          className="border-gray-300 focus:border-[#2E9013] focus:ring-[#2E9013]"
+                          data-testid="contact-email-input"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="phone">{t('contact.form.phone')} <span className="text-[#6B7280] font-normal text-sm">(optionnel)</span></Label>
+                        <Input
+                          id="phone" name="phone" type="tel"
+                          placeholder={t('contact.form.phonePlaceholder')}
+                          value={formData.phone} onChange={handleChange}
+                          className="border-gray-300 focus:border-[#2E9013] focus:ring-[#2E9013]"
+                          data-testid="contact-phone-input"
+                        />
+                      </div>
                     </div>
 
-                    {/* Organisation */}
-                    <div className="space-y-2">
-                      <Label htmlFor="organisation">Organisation *</Label>
-                      <Input
-                        id="organisation" name="organisation" type="text" required
-                        placeholder="Biotech / Laboratoire / Académique..."
-                        value={formData.organisation} onChange={handleChange}
-                        className="border-gray-300 focus:border-[#2E9013] focus:ring-[#2E9013]"
-                        data-testid="contact-organisation-input"
-                      />
-                    </div>
-
-                    {/* Fonction */}
-                    <div className="space-y-2">
-                      <Label htmlFor="fonction">Fonction</Label>
-                      <Input
-                        id="fonction" name="fonction" type="text"
-                        placeholder="Directeur R&D, Chef de projet clinique..."
-                        value={formData.fonction} onChange={handleChange}
-                        className="border-gray-300 focus:border-[#2E9013] focus:ring-[#2E9013]"
-                        data-testid="contact-fonction-input"
-                      />
-                    </div>
-
-                    {/* Téléphone */}
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">Téléphone <span className="text-[#6B7280] font-normal text-sm">(optionnel)</span></Label>
-                      <Input
-                        id="phone" name="phone" type="tel"
-                        placeholder="+33 1 XX XX XX XX"
-                        value={formData.phone} onChange={handleChange}
-                        className="border-gray-300 focus:border-[#2E9013] focus:ring-[#2E9013]"
-                        data-testid="contact-phone-input"
-                      />
+                    {/* Organisation + Fonction */}
+                    <div className="grid md:grid-cols-2 gap-5">
+                      <div className="space-y-2">
+                        <Label htmlFor="organisation">{t('contact.organisation')} *</Label>
+                        <Input
+                          id="organisation" name="organisation" type="text" required
+                          placeholder={t('contact.organisationPlaceholder')}
+                          value={formData.organisation} onChange={handleChange}
+                          className="border-gray-300 focus:border-[#2E9013] focus:ring-[#2E9013]"
+                          data-testid="contact-organisation-input"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="fonction">{t('contact.fonction')}</Label>
+                        <Input
+                          id="fonction" name="fonction" type="text"
+                          placeholder={t('contact.fonctionPlaceholder')}
+                          value={formData.fonction} onChange={handleChange}
+                          className="border-gray-300 focus:border-[#2E9013] focus:ring-[#2E9013]"
+                          data-testid="contact-fonction-input"
+                        />
+                      </div>
                     </div>
 
                     {/* Sujet — select */}
@@ -243,49 +256,18 @@ const ContactPage = () => {
             {/* Colonne droite (40%) */}
             <div className="w-full lg:w-2/5 flex flex-col gap-6">
 
-              {/* Coordonnées */}
-              <div className="bg-white rounded-xl shadow-sm p-8">
-                <h3 className="text-xl font-bold text-[#573D4E] mb-5">Coordonnées</h3>
-                <div className="space-y-4">
-                  <a href="mailto:contact@freearcs.com" className="flex items-center gap-3 text-[#4B5563] hover:text-[#2E9013] transition-colors">
-                    <div className="w-9 h-9 rounded-full bg-[#EAF5E1] flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-4 h-4 text-[#2E9013]" />
-                    </div>
-                    <span>contact@freearcs.com</span>
-                  </a>
-                  <a href="tel:+33179932112" className="flex items-center gap-3 text-[#4B5563] hover:text-[#2E9013] transition-colors">
-                    <div className="w-9 h-9 rounded-full bg-[#EAF5E1] flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-4 h-4 text-[#2E9013]" />
-                    </div>
-                    <span>+33 1 79 93 21 12</span>
-                  </a>
-                  <div className="flex items-start gap-3 text-[#4B5563]">
-                    <div className="w-9 h-9 rounded-full bg-[#EAF5E1] flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <MapPin className="w-4 h-4 text-[#2E9013]" />
-                    </div>
-                    <span>50 Avenue des Champs-Élysées<br />75008 Paris</span>
-                  </div>
-                </div>
-              </div>
-
               {/* Carrières */}
               <div className="bg-white rounded-xl shadow-sm p-8">
                 <div className="flex items-center gap-3 mb-4">
                   <Briefcase className="w-6 h-6 text-[#2E9013]" />
                   <h3 className="text-xl font-bold text-[#573D4E]">Carrières</h3>
                 </div>
-                <p className="text-[#4B5563] mb-6">
-                  Vous souhaitez rejoindre nos équipes ?
-                </p>
                 <p className="text-[#4B5563] mb-8">
-                  Adressez votre candidature à{' '}
-                  <a href="mailto:contact@freearcs.com" className="text-[#2E9013] font-semibold hover:underline">
-                    contact@freearcs.com
-                  </a>
+                  Adressez votre candidature à
                 </p>
-                <p className="text-[#4B5563] text-sm italic">
-                  Candidatures spontanées et candidatures aux offres ouvertes acceptées.
-                </p>
+                <a href="mailto:contact@freearcs.com" className="text-[#2E9013] font-semibold hover:underline text-lg">
+                  contact@freearcs.com
+                </a>
               </div>
 
             </div>{/* fin colonne droite */}

@@ -58,6 +58,13 @@ const LegalRepresentationPage = () => {
             <p className="text-[#4B5563] text-lg leading-relaxed">
               Freearcs Pharma Services agit comme représentant légal pour les promoteurs établis hors UE qui conduisent des études cliniques dans un ou plusieurs États membres. Contactez-nous pour en savoir plus sur nos services et comment nous pouvons vous aider à réussir vos projets de Recherche Clinique en Union Européenne.
             </p>
+            <div className="mt-8 flex justify-start">
+              <img
+                src="/UE.jpg"
+                alt="Drapeau Union Européenne"
+                className="h-32 w-auto"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -78,7 +85,7 @@ const LegalRepresentationPage = () => {
       </section> */}
 
       <FloatingCTA
-        label="Discutons de votre projet"
+        label={t('home.ctaDiscuss')}
         href="/contact"
         triggerRef={heroRef}
       />

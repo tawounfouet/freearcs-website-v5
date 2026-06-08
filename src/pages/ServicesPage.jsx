@@ -141,7 +141,7 @@ const ServiceModal = ({ pillar, onClose }) => {
         </div>
 
         <div className="p-8">
-          <p className="text-[#573D4E] font-semibold text-lg mb-6 italic">
+          <p className="text-[#573D4E] font-semibold text-lg mb-6 italic text-justify">
             {pillar.subtitle}
           </p>
 
@@ -152,7 +152,7 @@ const ServiceModal = ({ pillar, onClose }) => {
             {pillar.missions.map((mission, i) => (
               <li key={i} className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5 text-[#2E9013]" />
-                <span className="text-[#4B5563] leading-relaxed">{mission}</span>
+                <span className="text-[#4B5563] leading-relaxed text-justify">{mission}</span>
               </li>
             ))}
           </ul>
@@ -202,10 +202,13 @@ const ServicesPage = () => {
                   Nos Services
                 </h1>
                 <div className="mt-4 flex items-center justify-center gap-2 text-white/80 font-bold text-lg">
-                  <Link to="/" className="text-white hover:text-white/80 transition-colors">{t('nav.home')}</Link>
+                  <Link to="/" className="text-white hover:text-white/80 transition-colors">Accueil</Link>
                   <span className="text-white/60">/</span>
                   <span className="text-white">Nos Services</span>
                 </div>
+                <p className="text-white/90 text-lg mt-6 max-w-2xl mx-auto">
+                  Six piliers opérationnels pour soutenir la conduite de vos études cliniques.
+                </p>
               </div>
             </div>
           </div>
@@ -216,10 +219,10 @@ const ServicesPage = () => {
       <section className="py-16 lg:py-24 bg-[#F9FAFD]">
         <div className="max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#573D4E]">Notre Modèle Opérationnel</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#573D4E]">{t('services.operationalModelTitle')}</h2>
             <div className="w-16 h-1 bg-[#2E9013] mx-auto mt-4 mb-6"></div>
             <p className="text-[#4B5563] text-lg max-w-2xl mx-auto">
-              Une CRO qui s'adapte à votre organisation — pas l'inverse. Deux modalités d'engagement, selon votre étude, votre équipe et votre maturité opérationnelle.
+              {t('services.operationalModelIntro')}
             </p>
           </div>
 
@@ -228,19 +231,13 @@ const ServicesPage = () => {
             <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
               <div className="p-8 lg:p-10 flex-1 flex flex-col">
                 <div className="mb-6">
-                  <p className="text-[#2E9013] text-xs font-bold uppercase tracking-widest mb-1">Modalité 1</p>
-                  <h3 className="text-[#573D4E] text-xl font-bold">Modèle intégré</h3>
-                  <p className="text-[#4B5563] text-sm">(internalisation)</p>
+                  <h3 className="text-[#573D4E] text-xl font-bold">{t('services.integratedModelTitle')}</h3>
+                  <p className="text-[#2E9013] text-sm font-semibold">{t('services.integratedModelSubtitle')}</p>
                 </div>
-                <p className="text-[#4B5563] text-base leading-relaxed flex-1">
-                  Freearcs Pharma Services prend en charge l'étude de bout en bout sous sa propre gouvernance. Pilotage, exécution opérationnelle, monitoring, reporting réglementaire. Vous gardez la supervision stratégique, nous portons l'exécution.
+                <p className="text-[#4B5563] text-base leading-relaxed flex-1 text-justify">
+                  {t('services.integratedModelText')}
                 </p>
-                <div className="mt-6 pt-6 border-t border-gray-100">
-                  <span className="inline-flex items-center gap-2 text-[#2E9013] font-semibold text-sm">
-                    <CheckCircle className="w-4 h-4" />
-                    Idéal pour les promoteurs sans équipe dédiée
-                  </span>
-                </div>
+
               </div>
             </div>
 
@@ -248,19 +245,13 @@ const ServicesPage = () => {
             <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
               <div className="p-8 lg:p-10 flex-1 flex flex-col">
                 <div className="mb-6">
-                  <p className="text-[#573D4E] text-xs font-bold uppercase tracking-widest mb-1">Modalité 2</p>
-                  <h3 className="text-[#573D4E] text-xl font-bold">Intégration dans vos équipes</h3>
-                  <p className="text-[#4B5563] text-sm">(outsourcing senior)</p>
+                  <h3 className="text-[#573D4E] text-xl font-bold">{t('services.embeddedModelTitle')}</h3>
+                  <p className="text-[#573D4E] text-sm font-semibold">{t('services.embeddedModelSubtitle')}</p>
                 </div>
-                <p className="text-[#4B5563] text-base leading-relaxed flex-1">
-                  Nos experts s'intègrent dans votre organisation, sous votre gouvernance, comme une extension senior de votre équipe interne. Indiqué pour les promoteurs qui veulent renforcer leur capacité d'exécution sans sous-traiter le pilotage.
+                <p className="text-[#4B5563] text-base leading-relaxed flex-1 text-justify">
+                  {t('services.embeddedModelText')}
                 </p>
-                <div className="mt-6 pt-6 border-t border-gray-100">
-                  <span className="inline-flex items-center gap-2 text-[#573D4E] font-semibold text-sm">
-                    <CheckCircle className="w-4 h-4" />
-                    Idéal pour les équipes qui souhaitent se renforcer
-                  </span>
-                </div>
+
               </div>
             </div>
           </div>
@@ -271,10 +262,10 @@ const ServicesPage = () => {
       <section className="py-16 lg:py-24 bg-[#F9FAFD]">
         <div className="max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#573D4E]">Nos Six Piliers</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#573D4E]">{t('services.domainsTitle')}</h2>
             <div className="w-16 h-1 bg-[#2E9013] mx-auto mt-4 mb-6"></div>
             <p className="text-[#4B5563] text-lg max-w-xl mx-auto">
-              Cliquez sur un pilier pour découvrir toutes les missions associées.
+              {t('services.domainsIntro')}
             </p>
           </div>
 
@@ -292,11 +283,11 @@ const ServicesPage = () => {
                     <Icon className="w-6 h-6 flex-shrink-0 transition-colors" style={{ color: pillar.color }} />
                     {pillar.title}
                   </h3>
-                  <p className="text-[#4B5563] text-base leading-relaxed mb-4">
+                  <p className="text-[#4B5563] text-base leading-relaxed mb-4 text-justify">
                     {pillar.subtitle}
                   </p>
                   <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2E9013] group-hover:gap-2.5 transition-all">
-                    Voir les missions
+                    {t('services.seeMissions')}
                     <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </button>
@@ -315,7 +306,7 @@ const ServicesPage = () => {
       )}
 
       <FloatingCTA
-        label="Discutons de votre projet"
+        label={t('home.ctaDiscuss')}
         href="/contact"
         triggerRef={heroRef}
       />

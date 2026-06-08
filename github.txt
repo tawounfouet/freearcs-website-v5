@@ -10,3 +10,11 @@ git push -u origin main
 git remote add origin https://github.com/tawounfouet/freearcs-pharma-services.git
 git branch -M main
 git push -u origin main
+
+
+
+git remote set-url origin https://github.com/tawounfouet/freearcs-website-v5.git
+
+git remote -v
+origin	https://github.com/tawounfouet/freearcs-website-v5.git (fetch)
+origin	https://github.com/tawounfouet/freearcs-website-v5.git (push)

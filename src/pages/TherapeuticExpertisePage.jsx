@@ -97,7 +97,7 @@ const TherapeuticExpertisePage = () => {
                   <span className="text-white">Expertise Thérapeutique</span>
                 </div>
                 <p className="text-white/90 text-lg italic mt-4">
-                  Oncologie, SNC, maladies rares, en France et à l'international.
+                  {t('therapeuticExpertise.heroSubtitle')}
                 </p>
               </div>
             </div>
@@ -105,12 +105,21 @@ const TherapeuticExpertisePage = () => {
         </div>
       </section>
 
+      {/* ── Introduction ──────────────────────────────────────────────── */}
+      <section className="py-12 lg:py-16 bg-[#FAFAFA]">
+        <div className="max-w-[1100px] mx-auto px-6">
+          <p className="text-[#4B5563] text-lg leading-relaxed text-justify">
+            {t('therapeuticExpertise.intro')}
+          </p>
+        </div>
+      </section>
+
       {/* ── Types d'études ──────────────────────────────────────────────── */}
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#573D4E]">Types d'études</h2>
-            <p className="text-[#4B5563] mt-3 italic">Quatre modalités d'accompagnement adaptées à votre stade de développement.</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#573D4E]">{t('therapeuticExpertise.studyTypesTitle')}</h2>
+            <p className="text-[#4B5563] mt-3 italic">{t('therapeuticExpertise.studyTypesIntro')}</p>
             <div className="w-16 h-1 bg-[#2E9013] mx-auto mt-4"></div>
           </div>
 
@@ -129,7 +138,7 @@ const TherapeuticExpertisePage = () => {
       <section className="py-16 lg:py-24 bg-[#F9FAFD]">
         <div className="max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#573D4E]">Périmètres d'études</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#573D4E]">{t('therapeuticExpertise.perimetersTitle')}</h2>
             <div className="w-16 h-1 bg-[#2E9013] mx-auto mt-4"></div>
           </div>
 
@@ -144,12 +153,12 @@ const TherapeuticExpertisePage = () => {
         </div>
       </section>
 
-      {/* ── Aires thérapeutiques couvertes ──────────────────────────────── */}
+      {/* ── Aires thérapeutiques ──────────────────────────────── */}
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#573D4E]">Aires thérapeutiques couvertes</h2>
-            <p className="text-[#4B5563] mt-3 max-w-2xl mx-auto">L'ensemble des aires où nous avons accompagné nos partenaires. Aucune n'est plus importante qu'une autre.</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#573D4E]">{t('therapeuticExpertise.areasTitle')}</h2>
+            <p className="text-[#4B5563] mt-3 max-w-2xl mx-auto">{t('therapeuticExpertise.areasIntro')}</p>
             <div className="w-16 h-1 bg-[#2E9013] mx-auto mt-4"></div>
           </div>
 
@@ -165,7 +174,7 @@ const TherapeuticExpertisePage = () => {
       </section>
 
       <FloatingCTA
-        label="Discutons de votre projet"
+        label={t('home.ctaDiscuss')}
         href="/contact"
         triggerRef={heroRef}
       />

@@ -149,28 +149,10 @@ const BlogPage = () => {
         </div>
       </section>
 
-      {/* ── CTA LinkedIn ── */}
-      <section className="py-16 mx-4 sm:mx-8 lg:mx-16 mb-8 rounded-3xl bg-[#573D4E]" data-testid="newsletter-section">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="font-raleway text-2xl lg:text-3xl font-bold text-white mb-4">
-            {t('blog.stayUpdatedTitle')}
-          </h2>
-          <p className="text-white/80 mb-8">{t('blog.stayUpdatedText')}</p>
-          <a
-            href="https://www.linkedin.com/company/freearcs-pharma-services/?viewAsMember=true"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#0077B5] hover:bg-[#006097] text-white font-semibold px-8 py-3 rounded-full transition-colors"
-            data-testid="blog-linkedin-btn"
-          >
-            {t('blog.linkedinFollow')}
-            <ArrowRight className="w-4 h-4" />
-          </a>
-        </div>
-      </section>
+
 
       <FloatingCTA
-        label="Discutons de votre projet"
+        label={t('home.ctaDiscuss')}
         href="/contact"
         triggerRef={heroRef}
       />

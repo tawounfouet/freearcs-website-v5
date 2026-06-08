@@ -162,21 +162,21 @@ const HomePage = () => {
                 <div className="w-full sm:w-8/12 lg:w-7/12">
                   <div className="overflow-hidden">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 lg:mb-10">
-                      <span className="text-[#573D4E]">CRO indépendante,</span>{' '}<span className="text-[#2E9013]">exigeante et humaine</span>
+                      <span className="text-[#573D4E]">{t('home.heroSlide1Title1')}</span>{' '}<span className="text-[#2E9013]">{t('home.heroSlide1Title2')}</span>
                     </h1>
                   </div>
                   <div className="overflow-hidden">
                     <p className="text-lg sm:text-xl md:text-2xl text-black font-medium leading-tight mb-10 lg:mb-14">
-                      Freearcs Pharma Services accompagne biotechs, medtechs, laboratoires et promoteurs académiques dans la conduite de leurs études cliniques.
+                      {t('home.heroSlide1Subtitle')}
                     </p>
                   </div>
                   <div className="flex flex-wrap gap-4">
                     <Link to="/contact" className="bg-[#2E9013] hover:bg-[#1f6b0d] text-white font-semibold px-6 py-3 rounded-full inline-flex items-center transition-colors">
-                      Discutons de votre projet
+                      {t('home.ctaDiscuss')}
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Link>
                     <Link to="/services" className="border-2 border-[#2E9013] text-[#2E9013] bg-white/90 hover:bg-[#2E9013] hover:text-white font-semibold px-6 py-3 rounded-full inline-flex items-center transition-colors">
-                      Découvrir nos services
+                      {t('home.ctaExplore')}
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Link>
                   </div>
@@ -196,21 +196,21 @@ const HomePage = () => {
                 <div className="w-full sm:w-8/12 lg:w-7/12">
                   <div className="overflow-hidden">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 lg:mb-10">
-                      <span className="text-[#573D4E]">Élargissons le choix thérapeutique</span>{' '}<span className="text-[#2E9013]">pour chaque patient.</span>
+                      <span className="text-[#573D4E]">{t('home.heroSlide2Title1')}</span>{' '}<span className="text-[#2E9013]">{t('home.heroSlide2Title2')}</span>
                     </h1>
                   </div>
                   <div className="overflow-hidden">
                     <p className="text-lg sm:text-xl md:text-2xl text-black font-medium leading-tight mb-10 lg:mb-14">
-                      Parce que chaque maladie est curable, nous unissons notre expertise à la vôtre pour offrir à chaque patient une solution thérapeutique adaptée.
+                      {t('home.heroSlide2Subtitle')}
                     </p>
                   </div>
                   <div className="flex flex-wrap gap-4">
                     <Link to="/contact" className="bg-[#2E9013] hover:bg-[#1f6b0d] text-white font-semibold px-6 py-3 rounded-full inline-flex items-center transition-colors">
-                      Discutons de votre projet
+                      {t('home.ctaDiscuss')}
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Link>
                     <Link to="/services" className="border-2 border-[#2E9013] text-[#2E9013] bg-white/90 hover:bg-[#2E9013] hover:text-white font-semibold px-6 py-3 rounded-full inline-flex items-center transition-colors">
-                      Découvrir nos services
+                      {t('home.ctaExplore')}
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Link>
                   </div>
@@ -230,21 +230,21 @@ const HomePage = () => {
                 <div className="w-full sm:w-8/12 lg:w-7/12">
                   <div className="overflow-hidden">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 lg:mb-10">
-                      <span className="text-[#573D4E]">Un périmètre complet</span>{' '}<span className="text-[#2E9013]">pour vos études cliniques.</span>
+                      <span className="text-[#573D4E]">{t('home.heroSlide3Title1')}</span>{' '}<span className="text-[#2E9013]">{t('home.heroSlide3Title2')}</span>
                     </h1>
                   </div>
                   <div className="overflow-hidden">
                     <p className="text-lg sm:text-xl md:text-2xl text-black font-medium leading-tight mb-10 lg:mb-14">
-                      Médicaments, dispositifs médicaux et produits hors santé. Études interventionnelles, observationnelles et de vie réelle.
+                      {t('home.heroSlide3Subtitle')}
                     </p>
                   </div>
                   <div className="flex flex-wrap gap-4">
                     <Link to="/contact" className="bg-[#2E9013] hover:bg-[#1f6b0d] text-white font-semibold px-6 py-3 rounded-full inline-flex items-center transition-colors">
-                      Discutons de votre projet
+                      {t('home.ctaDiscuss')}
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Link>
                     <Link to="/services" className="border-2 border-[#2E9013] text-[#2E9013] bg-white/90 hover:bg-[#2E9013] hover:text-white font-semibold px-6 py-3 rounded-full inline-flex items-center transition-colors">
-                      Découvrir nos services
+                      {t('home.ctaExplore')}
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Link>
                   </div>
@@ -564,7 +564,7 @@ const HomePage = () => {
                 <Counter target={30} suffix="+" />
               </p>
               <p className="text-xs uppercase tracking-widest text-[#2E9013]/60 font-semibold mb-2">Depuis 2020</p>
-              <p className="text-sm text-[#4B5563]">Projets cliniques supervisés</p>
+              <p className="text-sm text-[#4B5563]">Plus de 30 projets cliniques supervisés</p>
             </motion.div>
 
             {/* Carte 2 — Fidélisation */}
@@ -577,7 +577,6 @@ const HomePage = () => {
               <p className="text-4xl font-bold text-[#573D4E] mb-1 font-raleway">
                 <Counter target={65} suffix=" %" />
               </p>
-              <p className="text-xs uppercase tracking-widest text-[#573D4E]/60 font-semibold mb-2">Rétention</p>
               <p className="text-sm text-[#4B5563]">Taux de fidélisation client</p>
             </motion.div>
 
@@ -589,15 +588,15 @@ const HomePage = () => {
               className="text-center p-8 bg-white border border-gray-100 rounded-2xl"
             >
               <p className="text-4xl font-bold text-[#F5A617] mb-1 font-raleway">International</p>
-              <p className="text-xs uppercase tracking-widest text-[#F5A617]/60 font-semibold mb-2">Présence géographique</p>
-              <p className="text-sm text-[#4B5563] leading-relaxed">France / EU – Afrique Francophone</p>
+              <p className="text-xs uppercase tracking-widest text-[#F5A617]/60 font-semibold mb-2">Zones couvertes</p>
+              <p className="text-sm text-[#4B5563] leading-relaxed">Europe – Afrique – Amériques – Asie</p>
             </motion.div>
           </motion.div>
 
         </div>
       </section>
 
-      <FloatingCTA label="Discutons de votre projet" href="/contact" triggerRef={credibilityRef} />
+      <FloatingCTA label={t('home.ctaDiscuss')} href="/contact" triggerRef={credibilityRef} />
 
     </div>
   );
