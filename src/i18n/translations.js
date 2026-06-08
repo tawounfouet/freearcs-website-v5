@@ -378,7 +378,7 @@ export const translations = {
       diffCol1Subtitle: "Vos proc\u00e9dures, ou les n\u00f4tres.",
       diffCol1Text1: "Toutes les organisations n'ont pas le m\u00eame niveau de structuration qualit\u00e9. Notre approche s'adapte :",
       diffCol1Strong1: "Pour les organisations d\u00e9j\u00e0 structur\u00e9es :",
-      diffCol1Text2: "Nous nous int\u00e9grons \u00e0 vos SOPs et \u00e0 votre cadre qualit\u00e9 existant. Notre travail respecte vos proc\u00e9dures internes, vos circuits de validation et votre gouvernance documentaire.",
+      diffCol1Text2: "Nous nous int\u00e9grons \u00e0 votre cadre qualit\u00e9 existant. Notre travail respecte vos proc\u00e9dures internes, vos circuits de validation et votre gouvernance documentaire.",
       diffCol1Strong2: "Pour les organisations en cours de structuration :",
       diffCol1Text3: "Nous mettons en \u0153uvre un cadre qualit\u00e9 adapt\u00e9 au p\u00e9rim\u00e8tre de notre intervention, conforme aux Bonnes Pratiques Cliniques et aux exigences r\u00e9glementaires applicables.",
       diffCol2Title: "La dimension p\u00e9dagogique",
