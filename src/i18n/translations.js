@@ -387,7 +387,7 @@ export const translations = {
       diffCol2Item1: "Comprennent le cadre r\u00e9glementaire applicable \u00e0 votre projet",
       diffCol2Item2: "Anticipent les \u00e9tapes critiques (soumissions, autorisations, d\u00e9lais d'inclusion, conventions hospitali\u00e8res)",
       diffCol2Item3: "Pilotent le d\u00e9veloppement de votre technologie en toute ma\u00eetrise r\u00e9glementaire et scientifique",
-      diffBottomText: "Notre objectif : que vous compreniez chaque d\u00e9cision r\u00e9glementaire et op\u00e9rationnelle prise sur votre \u00e9tude, et que vous puissiez la d\u00e9fendre devant un investisseur, une autorit\u00e9 ou un partenaire acad\u00e9mique."
+      diffBottomText: "Notre objectif : que vous compreniez chaque d\u00e9cision r\u00e9glementaire et op\u00e9rationnelle prise sur votre \u00e9tude."
     },
     references: {
       title: "Références — Études cliniques supervisées par Freearcs Pharma Services",
