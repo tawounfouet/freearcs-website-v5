@@ -9,18 +9,19 @@ import { Card, CardContent } from '../components/ui/card';
 import { Send, CheckCircle, Briefcase, Mail } from 'lucide-react';
 import SEO from '@/components/SEO';
 
-const SUBJECT_OPTIONS = [
-  { value: '', label: 'Sélectionnez un sujet' },
-  { value: 'Etude clinique', label: 'Étude clinique' },
-  { value: 'Representation Legale UE', label: 'Représentation Légale UE' },
-  { value: 'Formation', label: 'Formation' },
-  { value: 'Partenariat', label: 'Partenariat' },
-  { value: 'Autre', label: 'Autre' },
-];
-
 const ContactPage = () => {
   const { t } = useLanguage();
   const [searchParams] = useSearchParams();
+
+  const SUBJECT_OPTIONS = [
+    { value: '', label: t('contact.form.selectSubjectPlaceholder') },
+    { value: 'Etude clinique', label: t('contact.form.subjects.clinicalStudy') },
+    { value: 'Representation Legale UE', label: t('contact.form.subjects.legalRep') },
+    { value: 'Formation', label: t('contact.form.subjects.training') },
+    { value: 'Partenariat', label: t('contact.form.subjects.partnership') },
+    { value: 'Autre', label: t('contact.form.subjects.other') },
+  ];
+
   const [formData, setFormData] = useState({
     firstName: '',
     name: '',
@@ -96,7 +97,7 @@ const ContactPage = () => {
                   <span className="text-white">Contact</span>
                 </div>
                 <p className="text-white/90 text-lg mt-4">
-                  Présentez-nous votre projet. Premier échange sous 48 heures.
+                  {t('contact.introHero')}
                 </p>
               </div>
             </div>
@@ -190,7 +191,7 @@ const ContactPage = () => {
 
                     {/* Sujet — select */}
                     <div className="space-y-2">
-                      <Label htmlFor="subject">Sujet de la demande *</Label>
+                      <Label htmlFor="subject">{t('contact.subjectLabel')}</Label>
                       <select
                         id="subject" name="subject" required
                         value={formData.subject} onChange={handleChange}
@@ -205,11 +206,11 @@ const ContactPage = () => {
 
                     {/* Message */}
                     <div className="space-y-2">
-                      <Label htmlFor="message">Votre message *</Label>
+                      <Label htmlFor="message">{t('contact.messageLabel')}</Label>
                       <Textarea
                         id="message" name="message" required rows={6}
                         maxLength={1500}
-                        placeholder="Décrivez votre projet, vos besoins, votre calendrier..."
+                        placeholder={t('contact.messagePlaceholder')}
                         value={formData.message} onChange={handleChange}
                         className="border-gray-300 focus:border-[#2E9013] focus:ring-[#2E9013] resize-none"
                         data-testid="contact-message-input"
@@ -226,9 +227,9 @@ const ContactPage = () => {
                         data-testid="contact-rgpd-input"
                       />
                       <Label htmlFor="rgpdConsent" className="text-sm font-normal cursor-pointer">
-                        J'accepte la{' '}
+                        {t('contact.rgpdConsent')}{' '}
                         <Link to="/privacy" className="text-[#2E9013] hover:underline font-semibold">
-                          Politique de Confidentialité
+                          {t('footer.privacy')}
                         </Link>{' '}
                         *
                       </Label>
@@ -240,13 +241,11 @@ const ContactPage = () => {
                       data-testid="contact-submit-btn"
                     >
                       <Send className="w-5 h-5 mr-2" />
-                      Envoyer le message
+                      {t('contact.submitButton')}
                     </Button>
 
                     <p className="text-[#6B7280] text-xs mt-3 italic leading-relaxed">
-                      En envoyant ce message, vous acceptez que vos données soient traitées par Freearcs Pharma Services pour répondre à votre demande, conformément à notre{' '}
-                      <Link to="/privacy" className="text-[#2E9013] hover:underline">Politique de Confidentialité</Link>.{' '}
-                      Vos données ne font l'objet d'aucune cession à des tiers à des fins commerciales.
+                      {t('contact.rgpdFooter')}
                     </p>
                   </form>
                 </CardContent>
@@ -260,10 +259,10 @@ const ContactPage = () => {
               <div className="bg-white rounded-xl shadow-sm p-8">
                 <div className="flex items-center gap-3 mb-4">
                   <Briefcase className="w-6 h-6 text-[#2E9013]" />
-                  <h3 className="text-xl font-bold text-[#573D4E]">Carrières</h3>
+                  <h3 className="text-xl font-bold text-[#573D4E]">{t('contact.careersTitle')}</h3>
                 </div>
                 <p className="text-[#4B5563] mb-8">
-                  Adressez votre candidature à
+                  {t('contact.careersText')}
                 </p>
                 <a href="mailto:contact@freearcs.com" className="text-[#2E9013] font-semibold hover:underline text-lg">
                   contact@freearcs.com

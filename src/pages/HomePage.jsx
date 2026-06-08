@@ -538,7 +538,7 @@ const HomePage = () => {
 
           <Reveal>
             <h2 className="font-raleway text-2xl lg:text-3xl font-bold text-[#573D4E] text-center mb-10">
-              Ils nous font confiance
+              {t('home.trustHeading')}
             </h2>
             <div className="py-8">
               <LogoCarousel />

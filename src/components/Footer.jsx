@@ -39,7 +39,7 @@ const Footer = () => {
             </div>
             {/* AFCROs Member Badge */}
             <div className="mt-5 bg-white/10 rounded-lg py-3 px-4 inline-flex items-center gap-3">
-              <span className="text-sm text-white/80 font-medium">Membre</span>
+              <span className="text-sm text-white/80 font-medium">{t('footer.afcrosMember')}</span>
               <img src="/logo_AFCROs.png" alt="AFCROs" className="h-16 w-auto" />
             </div>
           </div>

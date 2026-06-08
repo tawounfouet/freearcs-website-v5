@@ -4,70 +4,70 @@ import { useLanguage } from '../context/LanguageContext';
 import SEO from '@/components/SEO';
 import FloatingCTA from '../components/FloatingCTA';
 
-const TYPES_ETUDES = [
-  {
-    title: "Études interventionnelles",
-    detail: "Études de dérisquage, POC, First-in-Human, essais cliniques contrôlés (Phase I à IV), investigations cliniques, PMCF",
-  },
-  {
-    title: "Études observationnelles",
-    detail: "Cohortes, registres, études post-AMM, suivi long terme",
-  },
-  {
-    title: "Études épidémiologiques",
-    detail: "Études de prévalence, d'incidence, identification des facteurs de risque",
-  },
-  {
-    title: "Données de vie réelle (RWE)",
-    detail: "Projets Real-World Evidence à partir de bases de données de soins courants",
-  },
-];
-
-const PERIMETRES = [
-  {
-    title: "Médicaments",
-    detail: "Produits soumis à Autorisation de Mise sur le Marché (AMM)",
-  },
-  {
-    title: "Dispositifs médicaux",
-    detail: "Études pré-marquage CE et suivi post-marquage (PMCF)",
-  },
-  {
-    title: "Hors produits de santé",
-    detail: "Études cliniques sur produits cosmétiques, compléments alimentaires, nutraceutiques",
-  },
-];
-
-const AIRES = [
-  {
-    title: "Oncologie & Hématologie",
-    detail: "Phases précoces (I & II), First-in-Human, immunothérapies, vaccins thérapeutiques. Indications : tumeurs solides, lymphomes, myélome multiple, leucémies (LLC, LAM), cancer de la vessie, GIST, études sur implants mammaires, radiothérapie.",
-  },
-  {
-    title: "Neurosciences (SNC)",
-    detail: "Pathologies neurodégénératives. Indications : Alzheimer, Parkinson, SLA, troubles neurodéveloppementaux, spasticité, atrophie multisystématisée.",
-  },
-  {
-    title: "Maladies rares & orphelines",
-    detail: "Expertise des designs adaptés aux faibles effectifs. Indications : dystrophie musculaire de Duchenne, maladie de Wilson, FAOD.",
-  },
-  {
-    title: "Dermatologie & maladies inflammatoires",
-    detail: "Indications : psoriasis, lupus, dermatite atopique.",
-  },
-  {
-    title: "Infectiologie & Vaccinologie",
-    detail: "Études sur maladies infectieuses et essais vaccinaux.",
-  },
-  {
-    title: "Pneumologie, Rhumatologie & Cardiologie",
-    detail: "BPCO, rhumatologie, FAP, LVAD.",
-  },
-];
-
 const TherapeuticExpertisePage = () => {
   const { t } = useLanguage();
   const heroRef = useRef(null);
+
+  const TYPES_ETUDES = [
+    {
+      title: t('therapeuticExpertise.typesEtudes.interventional'),
+      detail: t('therapeuticExpertise.typesEtudes.interventionalDetail'),
+    },
+    {
+      title: t('therapeuticExpertise.typesEtudes.observational'),
+      detail: t('therapeuticExpertise.typesEtudes.observationalDetail'),
+    },
+    {
+      title: t('therapeuticExpertise.typesEtudes.epidemiological'),
+      detail: t('therapeuticExpertise.typesEtudes.epidemiologicalDetail'),
+    },
+    {
+      title: t('therapeuticExpertise.typesEtudes.rwe'),
+      detail: t('therapeuticExpertise.typesEtudes.rweDetail'),
+    },
+  ];
+
+  const PERIMETRES = [
+    {
+      title: t('therapeuticExpertise.perimeters.medicines'),
+      detail: t('therapeuticExpertise.perimeters.medicinesDetail'),
+    },
+    {
+      title: t('therapeuticExpertise.perimeters.medicalDevices'),
+      detail: t('therapeuticExpertise.perimeters.medicalDevicesDetail'),
+    },
+    {
+      title: t('therapeuticExpertise.perimeters.nonHealth'),
+      detail: t('therapeuticExpertise.perimeters.nonHealthDetail'),
+    },
+  ];
+
+  const AIRES = [
+    {
+      title: t('therapeuticExpertise.areas.oncology'),
+      detail: t('therapeuticExpertise.areas.oncologyDetail'),
+    },
+    {
+      title: t('therapeuticExpertise.areas.neurosciences'),
+      detail: t('therapeuticExpertise.areas.neurosciencesDetail'),
+    },
+    {
+      title: t('therapeuticExpertise.areas.rareDiseases'),
+      detail: t('therapeuticExpertise.areas.rareDiseasesDetail'),
+    },
+    {
+      title: t('therapeuticExpertise.areas.dermatology'),
+      detail: t('therapeuticExpertise.areas.dermatologyDetail'),
+    },
+    {
+      title: t('therapeuticExpertise.areas.infectiology'),
+      detail: t('therapeuticExpertise.areas.infectiologyDetail'),
+    },
+    {
+      title: t('therapeuticExpertise.areas.pneumology'),
+      detail: t('therapeuticExpertise.areas.pneumologyDetail'),
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-[#F9FAFD]" data-testid="therapeutic-expertise-page">
