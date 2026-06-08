@@ -94,7 +94,21 @@ export const translations = {
         text: "Freearcs Pharma Services accompagne les promoteurs dans la préparation et la soumission des demandes d'éligibilité dans le cadre du dispositif national fast-track, réduisant les délais d'autorisation de 106 jours à 49 jours — ou 14 jours sans questions.",
         procedures: "Freearcs Pharma Services accompagne : préparation et soumission des demandes d'éligibilité dans le cadre du dispositif national fast-track. Études Phase I et I/II mononationales ciblant les maladies graves ou rares, mécanismes first-in-class, et inclusion adolescente."
       },
-      talkToUs: "Parlons de votre étude clinique."
+      talkToUs: "Parlons de votre étude clinique.",
+      heroSlide1Title1: "CRO indépendante,",
+      heroSlide1Title2: "agile et humaine",
+      heroSlide1Subtitle: "Freearcs Pharma Services accompagne biotechs, medtechs, laboratoires et promoteurs académiques dans la conduite de leurs études cliniques.",
+      heroSlide2Title1: "Élargissons le choix thérapeutique",
+      heroSlide2Title2: "pour chaque patient.",
+      heroSlide2Subtitle: "Parce que chaque maladie est curable, nous unissons notre expertise à la vôtre pour offrir à chaque patient une solution thérapeutique adaptée.",
+      heroSlide3Title1: "Un périmètre complet",
+      heroSlide3Title2: "pour vos études cliniques.",
+      heroSlide3Subtitle: "Médicaments, dispositifs médicaux et produits hors santé. Études interventionnelles, observationnelles et de vie réelle.",
+      statsSince2020: "Depuis 2020",
+      statsInternational: "International",
+      statsZonesCovered: "Zones couvertes",
+      statsZonesText: "Europe – Afrique – Amériques – Asie",
+      trustHeading: "Ils nous font confiance"
     },
     about: {
       title: "Qui sommes-nous ? Freearcs Pharma Services, CRO française indépendante",
@@ -246,7 +260,39 @@ export const translations = {
       statsProjects: "Projets cliniques",
       statsAreas: "Aires thérapeutiques",
       statsPhases: "Toutes les phases",
-      statsRegulatory: "Expertise réglementaire"
+      statsRegulatory: "Expertise réglementaire",
+      typesEtudes: {
+        interventional: "Études interventionnelles",
+        interventionalDetail: "Études de dérisquage, POC, First-in-Human, essais cliniques contrôlés (Phase I à IV), investigations cliniques, PMCF",
+        observational: "Études observationnelles",
+        observationalDetail: "Cohortes, registres, études post-AMM, suivi long terme",
+        epidemiological: "Études épidémiologiques",
+        epidemiologicalDetail: "Études de prévalence, d'incidence, identification des facteurs de risque",
+        rwe: "Données de vie réelle (RWE)",
+        rweDetail: "Projets Real-World Evidence à partir de bases de données de soins courants",
+      },
+      perimeters: {
+        medicines: "Médicaments",
+        medicinesDetail: "Produits soumis à Autorisation de Mise sur le Marché (AMM)",
+        medicalDevices: "Dispositifs médicaux",
+        medicalDevicesDetail: "Études pré-marquage CE et suivi post-marquage (PMCF)",
+        nonHealth: "Hors produits de santé",
+        nonHealthDetail: "Études cliniques sur produits cosmétiques, compléments alimentaires, nutraceutiques",
+      },
+      areas: {
+        oncology: "Oncologie & Hématologie",
+        oncologyDetail: "Phases précoces (I & II), First-in-Human, immunothérapies, vaccins thérapeutiques. Indications : tumeurs solides, lymphomes, myélome multiple, leucémies (LLC, LAM), cancer de la vessie, GIST, études sur implants mammaires, radiothérapie.",
+        neurosciences: "Neurosciences (SNC)",
+        neurosciencesDetail: "Pathologies neurodégénératives. Indications : Alzheimer, Parkinson, SLA, troubles neurodéveloppementaux, spasticité, atrophie multisystématisée.",
+        rareDiseases: "Maladies rares & orphelines",
+        rareDiseasesDetail: "Expertise des designs adaptés aux faibles effectifs. Indications : dystrophie musculaire de Duchenne, maladie de Wilson, FAOD.",
+        dermatology: "Dermatologie & maladies inflammatoires",
+        dermatologyDetail: "Indications : psoriasis, lupus, dermatite atopique.",
+        infectiology: "Infectiologie & Vaccinologie",
+        infectiologyDetail: "Études sur maladies infectieuses et essais vaccinaux.",
+        pneumology: "Pneumologie, Rhumatologie & Cardiologie",
+        pneumologyDetail: "BPCO, rhumatologie, FAP, LVAD.",
+      }
     },
     whyChooseUs: {
       title: "Pourquoi Choisir Freearcs Pharma Services comme Partenaire CRO",
@@ -293,7 +339,52 @@ export const translations = {
         "Délais de réponse plus longs",
         "Approche uniforme",
         "Coûts de structure élevés"
-      ]
+      ],
+      // Page hero & context
+      heroTitle: "Pourquoi nous choisir ?",
+      heroSubtitle: "Cinq raisons concrètes de nous confier votre étude.",
+      contextTitle: "Le contexte",
+      contextText: "Le développement scientifique a fait émerger une nouvelle génération de biotechs et de startups HealthTech, qui innovent aux côtés des laboratoires pharmaceutiques établis. Si leur expertise technologique est de pointe, beaucoup sont moins outillées sur la dimension réglementaire et opérationnelle : stratégie, budgétisation, jalons de pilotage, délais d'autorisations, conventions hospitalières, conformité aux Bonnes Pratiques Cliniques. C'est précisément à cette jonction que Freearcs Pharma Services intervient.",
+
+      // Notre approche
+      approachTitle: "Notre approche",
+      approachSubtitle: "Un accompagnement humain, main dans la main avec vos équipes.",
+      approachItem1: "Nous prenons le temps de comprendre votre technologie, vos contraintes et vos enjeux avant toute proposition.",
+      approachItem2: "Nous travaillons en transparence avec vos équipes, sans les écarter du pilotage.",
+      approachItem3: "Nous expliquons chaque étape réglementaire et opérationnelle, pour que vous gardiez la maîtrise scientifique et la maîtrise réglementaire de votre projet.",
+      approachQuote: "\u00ab Les \u00e9quipes des biotechs sont expertes sur leur technologie, mais souvent perdues sur la partie r\u00e9glementaire. Notre travail, c'est de vous aider \u00e0 comprendre et anticiper ces \u00e9tapes, pour que le projet avance sereinement et suivant la r\u00e9glementation. \u00bb",
+      approachQuoteAuthor: "\u2014 Nad\u00e8ge KAMBOU, Fondatrice",
+
+      // 5 engagements
+      commitmentsTitle: "5 engagements",
+      commitment1Title: "Agile et flexible",
+      commitment1Text: "Une structure ind\u00e9pendante, sans cha\u00eene hi\u00e9rarchique \u00e9tendue. Vous avez un interlocuteur direct qui conna\u00eet votre \u00e9tude, et nous adaptons notre organisation \u00e0 l'\u00e9volution de votre projet.",
+      commitment2Title: "M\u00e9thodes \u00e9prouv\u00e9es sur protocoles complexes",
+      commitment2Text: "Phase I, \u00e9tudes pivots, oncologie, maladies rares ; des protocoles sur lesquels nos \u00e9quipes d\u00e9veloppent une expertise durable, transmise et capitalis\u00e9e projet apr\u00e8s projet.",
+      commitment3Title: "Accompagnement sur mesure",
+      commitment3Text: "Chaque mission est align\u00e9e sur vos contraintes et vos objectifs. Que vos \u00e9quipes soient d\u00e9j\u00e0 structur\u00e9es ou pas, nous nous adaptons \u00e0 votre niveau de maturit\u00e9 op\u00e9rationnelle.",
+      commitment4Title: "Ma\u00eetrise r\u00e9glementaire",
+      commitment4Text: "France, UE, exigences internationales. ANSM, CPP, CNIL, CTR 536/2014, MDR 745/2017, exigences FDA selon les juridictions. Nous suivons activement les \u00e9volutions r\u00e9glementaires pour vous en tenir inform\u00e9s.",
+      commitment5Title: "Expertise op\u00e9rationnelle",
+      commitment5Text: "Chaque mission est port\u00e9e par une supervision op\u00e9rationnelle d\u00e9di\u00e9e, qui assure la coh\u00e9rence du pilotage, la qualit\u00e9 de l'ex\u00e9cution et la continuit\u00e9 de l'interlocution avec votre \u00e9quipe.",
+
+      // Notre diff\u00e9rence
+      differenceTitle: "Notre diff\u00e9rence",
+      differenceSubtitle: "Deux dimensions qui distinguent notre accompagnement.",
+      diffCol1Title: "Adaptation au niveau de maturit\u00e9 de votre organisation",
+      diffCol1Subtitle: "Vos proc\u00e9dures, ou les n\u00f4tres.",
+      diffCol1Text1: "Toutes les organisations n'ont pas le m\u00eame niveau de structuration qualit\u00e9. Notre approche s'adapte :",
+      diffCol1Strong1: "Pour les organisations d\u00e9j\u00e0 structur\u00e9es :",
+      diffCol1Text2: "Nous nous int\u00e9grons \u00e0 vos SOPs et \u00e0 votre cadre qualit\u00e9 existant. Notre travail respecte vos proc\u00e9dures internes, vos circuits de validation et votre gouvernance documentaire.",
+      diffCol1Strong2: "Pour les organisations en cours de structuration :",
+      diffCol1Text3: "Nous mettons en \u0153uvre un cadre qualit\u00e9 adapt\u00e9 au p\u00e9rim\u00e8tre de notre intervention, conforme aux Bonnes Pratiques Cliniques et aux exigences r\u00e9glementaires applicables.",
+      diffCol2Title: "La dimension p\u00e9dagogique",
+      diffCol2Subtitle: "Comprendre pour d\u00e9cider en toute autonomie.",
+      diffCol2Text: "L'accompagnement Freearcs Pharma Services inclut une dimension p\u00e9dagogique. Sur la base des besoins identifi\u00e9s avec vous, nous proposons des formations sur mesure pour que vos \u00e9quipes :",
+      diffCol2Item1: "Comprennent le cadre r\u00e9glementaire applicable \u00e0 votre projet",
+      diffCol2Item2: "Anticipent les \u00e9tapes critiques (soumissions, autorisations, d\u00e9lais d'inclusion, conventions hospitali\u00e8res)",
+      diffCol2Item3: "Pilotent le d\u00e9veloppement de votre technologie en toute ma\u00eetrise r\u00e9glementaire et scientifique",
+      diffBottomText: "Notre objectif : que vous compreniez chaque d\u00e9cision r\u00e9glementaire et op\u00e9rationnelle prise sur votre \u00e9tude, et que vous puissiez la d\u00e9fendre devant un investisseur, une autorit\u00e9 ou un partenaire acad\u00e9mique."
     },
     references: {
       title: "Références — Études cliniques supervisées par Freearcs Pharma Services",
@@ -367,6 +458,21 @@ export const translations = {
       metaTitle: "Contact",
       metaDescription: "Discutez de votre projet clinique avec notre équipe. Études interventionnelles, observationnelles, RWE — nous vous accompagnons à chaque étape.",
       intro: "Contactez-nous pour discuter de votre projet clinique et découvrir comment Freearcs Pharma Services peut accompagner votre étude.",
+      introHero: "Présentez-nous votre projet. Premier échange sous 48 heures.",
+      firstName: "Prénom",
+      firstNamePlaceholder: "Marie",
+      organisation: "Organisation",
+      organisationPlaceholder: "Biotech / Laboratoire / Académique...",
+      fonction: "Fonction",
+      fonctionPlaceholder: "Directeur R&D, Chef de projet clinique...",
+      rgpdConsent: "J'accepte la",
+      careersTitle: "Carrières",
+      careersText: "Adressez votre candidature à",
+      subjectLabel: "Sujet de la demande *",
+      messageLabel: "Votre message *",
+      messagePlaceholder: "Décrivez votre projet, vos besoins, votre calendrier...",
+      submitButton: "Envoyer le message",
+      rgpdFooter: "En envoyant ce message, vous acceptez que vos données soient traitées par Freearcs Pharma Services pour répondre à votre demande, conformément à notre Politique de Confidentialité. Vos données ne font l'objet d'aucune cession à des tiers à des fins commerciales.",
       form: {
         name: "Nom",
         company: "Entreprise",
@@ -375,7 +481,9 @@ export const translations = {
         subject: "Sujet",
         subjects: {
           general: "Demande générale",
-          legalRep: "Représentation Légale",
+          clinicalStudy: "Étude clinique",
+          legalRep: "Représentation Légale UE",
+          training: "Formation",
           project: "Discussion projet",
           partnership: "Partenariat",
           other: "Autre"
@@ -416,11 +524,17 @@ export const translations = {
       serviceContractBudget: "Contrat et Budget",
       serviceFeasibilityMonitoring: "Faisabilité et Monitoring",
       serviceSiteSupport: "Support Site et Saisie de Données",
-      serviceTraining: "Formation"
+      serviceTraining: "Formation",
+      afcrosMember: "Membre"
     },
     404: {
       title: "Page non trouvée",
       description: "La page que vous cherchez n'existe pas ou a été déplacée.",
+      backHome: "Retour à l'accueil"
+    },
+    errors: {
+      title: "Oops ! Une erreur s'est produite",
+      description: "Quelque chose a mal tourné.",
       backHome: "Retour à l'accueil"
     }
   },
@@ -698,7 +812,39 @@ export const translations = {
       studyTypesIntro: "Four engagement models tailored to your development stage.",
       perimetersTitle: "Study Perimeters",
       areasTitle: "Therapeutic Areas",
-      areasIntro: "All areas where we have supported our partners."
+      areasIntro: "All areas where we have supported our partners.",
+      typesEtudes: {
+        interventional: "Interventional studies",
+        interventionalDetail: "De-risking studies, POC, First-in-Human, controlled clinical trials (Phase I–IV), clinical investigations, PMCF",
+        observational: "Observational studies",
+        observationalDetail: "Cohorts, registries, post-approval studies, long-term follow-up",
+        epidemiological: "Epidemiological studies",
+        epidemiologicalDetail: "Prevalence and incidence studies, risk factor identification",
+        rwe: "Real-World Evidence (RWE)",
+        rweDetail: "Real-World Evidence projects from routine healthcare databases",
+      },
+      perimeters: {
+        medicines: "Medicinal products",
+        medicinesDetail: "Products subject to Marketing Authorisation (MA)",
+        medicalDevices: "Medical devices",
+        medicalDevicesDetail: "Pre-CE marking and post-market clinical follow-up (PMCF) studies",
+        nonHealth: "Non-health products",
+        nonHealthDetail: "Clinical studies on cosmetic products, food supplements, nutraceuticals",
+      },
+      areas: {
+        oncology: "Oncology & Haematology",
+        oncologyDetail: "Early phases (I & II), First-in-Human, immunotherapies, therapeutic vaccines. Indications: solid tumours, lymphomas, multiple myeloma, leukaemias (CLL, AML), bladder cancer, GIST, breast implant studies, radiotherapy.",
+        neurosciences: "Neurosciences (CNS)",
+        neurosciencesDetail: "Neurodegenerative pathologies. Indications: Alzheimer's, Parkinson's, ALS, neurodevelopmental disorders, spasticity, multiple system atrophy.",
+        rareDiseases: "Rare & Orphan diseases",
+        rareDiseasesDetail: "Expertise in designs adapted to low patient numbers. Indications: Duchenne muscular dystrophy, Wilson's disease, FAOD.",
+        dermatology: "Dermatology & inflammatory diseases",
+        dermatologyDetail: "Indications: psoriasis, lupus, atopic dermatitis.",
+        infectiology: "Infectiology & Vaccinology",
+        infectiologyDetail: "Studies on infectious diseases and vaccine trials.",
+        pneumology: "Pneumology, Rheumatology & Cardiology",
+        pneumologyDetail: "COPD, rheumatology, FAP, LVAD.",
+      }
     },
     whyChooseUs: {
       title: "Why Choose Freearcs Pharma Services as Your CRO Partner",
@@ -745,7 +891,52 @@ export const translations = {
         "Slower response times",
         "One-size-fits-all approach",
         "Higher overhead costs"
-      ]
+      ],
+      // Page hero & context
+      heroTitle: "Why Choose Us?",
+      heroSubtitle: "Five concrete reasons to entrust us with your study.",
+      contextTitle: "Context",
+      contextText: "Scientific development has given rise to a new generation of biotechs and HealthTech startups, innovating alongside established pharmaceutical laboratories. While their technological expertise is cutting-edge, many are less equipped in the regulatory and operational dimension: strategy, budgeting, milestone management, authorisation timelines, hospital agreements, Good Clinical Practice compliance. It is precisely at this intersection that Freearcs Pharma Services operates.",
+
+      // Our approach
+      approachTitle: "Our Approach",
+      approachSubtitle: "Human support, hand in hand with your teams.",
+      approachItem1: "We take the time to understand your technology, your constraints and your stakes before making any proposal.",
+      approachItem2: "We work transparently with your teams, without sidelining them from project management.",
+      approachItem3: "We explain every regulatory and operational step, so you maintain scientific and regulatory control of your project.",
+      approachQuote: "Biotech teams are experts in their technology, but often lost on the regulatory side. Our job is to help you understand and anticipate these steps, so the project can move forward smoothly and in compliance.",
+      approachQuoteAuthor: "\u2014 Nad\u00e8ge KAMBOU, Founder",
+
+      // 5 commitments
+      commitmentsTitle: "5 Commitments",
+      commitment1Title: "Agile and Flexible",
+      commitment1Text: "An independent structure, without extensive hierarchical chain. You have a direct contact who knows your study, and we adapt our organisation as your project evolves.",
+      commitment2Title: "Proven Methods on Complex Protocols",
+      commitment2Text: "Phase I, pivotal studies, oncology, rare diseases; protocols on which our teams develop lasting expertise, transmitted and capitalised project after project.",
+      commitment3Title: "Tailored Support",
+      commitment3Text: "Each mission is aligned with your constraints and objectives. Whether your teams are already structured or not, we adapt to your level of operational maturity.",
+      commitment4Title: "Regulatory Expertise",
+      commitment4Text: "France, EU, international requirements. ANSM, CPP, CNIL, CTR 536/2014, MDR 745/2017, FDA requirements depending on jurisdictions. We actively monitor regulatory developments to keep you informed.",
+      commitment5Title: "Operational Expertise",
+      commitment5Text: "Each mission is backed by dedicated operational supervision, ensuring consistency of management, quality of execution, and continuity of communication with your team.",
+
+      // Our difference
+      differenceTitle: "Our Difference",
+      differenceSubtitle: "Two dimensions that set our support apart.",
+      diffCol1Title: "Adaptation to Your Organisation\u2019s Maturity Level",
+      diffCol1Subtitle: "Your procedures, or ours.",
+      diffCol1Text1: "Not all organisations have the same level of quality structuring. Our approach adapts:",
+      diffCol1Strong1: "For already structured organisations:",
+      diffCol1Text2: "We integrate into your SOPs and existing quality framework. Our work respects your internal procedures, validation circuits and document governance.",
+      diffCol1Strong2: "For organisations in the process of structuring:",
+      diffCol1Text3: "We implement a quality framework adapted to the scope of our intervention, compliant with Good Clinical Practice and applicable regulatory requirements.",
+      diffCol2Title: "The Educational Dimension",
+      diffCol2Subtitle: "Understand to decide autonomously.",
+      diffCol2Text: "Freearcs Pharma Services support includes an educational dimension. Based on needs identified with you, we offer tailored training so your teams can:",
+      diffCol2Item1: "Understand the applicable regulatory framework for your project",
+      diffCol2Item2: "Anticipate critical steps (submissions, authorisations, inclusion timelines, hospital agreements)",
+      diffCol2Item3: "Steer the development of your technology with full regulatory and scientific mastery",
+      diffBottomText: "Our goal: that you understand every regulatory and operational decision made on your study, and can defend it before an investor, an authority, or an academic partner."
     },
     references: {
       title: "References - Clinical Studies Supervised by Freearcs Pharma Services",
@@ -819,6 +1010,21 @@ export const translations = {
       metaTitle: "Contact",
       metaDescription: "Discuss your clinical project with our team. Interventional, observational, RWE studies — we support you at every stage.",
       intro: "Contact us to discuss your clinical project and explore how Freearcs Pharma Services can support your study.",
+      introHero: "Present us your project. First exchange within 48 hours.",
+      firstName: "First name",
+      firstNamePlaceholder: "Marie",
+      organisation: "Organisation",
+      organisationPlaceholder: "Biotech / Laboratory / Academic...",
+      fonction: "Position",
+      fonctionPlaceholder: "R&D Director, Clinical Project Manager...",
+      rgpdConsent: "I accept the",
+      careersTitle: "Careers",
+      careersText: "Send your application to",
+      subjectLabel: "Subject of your request *",
+      messageLabel: "Your message *",
+      messagePlaceholder: "Describe your project, your needs, your timeline...",
+      submitButton: "Send Message",
+      rgpdFooter: "By sending this message, you agree that your data will be processed by Freearcs Pharma Services to respond to your request. Your data is not transferred to third parties for commercial purposes.",
       form: {
         name: "Name",
         company: "Company",
@@ -827,7 +1033,9 @@ export const translations = {
         subject: "Subject",
         subjects: {
           general: "General inquiry",
-          legalRep: "Legal Representation",
+          clinicalStudy: "Clinical study",
+          legalRep: "Legal Representation UE",
+          training: "Training",
           project: "Project discussion",
           partnership: "Partnership",
           other: "Other"
@@ -845,15 +1053,6 @@ export const translations = {
         uploadHint: "PDF, DOC, DOCX up to 10MB",
         anotherMessage: "Send Another Message"
       },
-      firstName: "First name",
-      firstNamePlaceholder: "Marie",
-      organisation: "Organisation",
-      organisationPlaceholder: "Biotech / Laboratory / Academic...",
-      fonction: "Position",
-      fonctionPlaceholder: "R&D Director, Clinical Project Manager...",
-      rgpdConsent: "I accept the",
-      careersTitle: "Careers",
-      careersText: "Send your application to",
       successTitle: "Message Sent!",
       successText: "Thank you for contacting Freearcs Pharma Services. We will get back to you within 24–48 hours.",
       contactInfoTitle: "Contact Information",
@@ -877,11 +1076,17 @@ export const translations = {
       serviceContractBudget: "Contract & Budget",
       serviceFeasibilityMonitoring: "Feasibility & Monitoring",
       serviceSiteSupport: "Site Support & Data Entry",
-      serviceTraining: "Training"
+      serviceTraining: "Training",
+      afcrosMember: "Member"
     },
     404: {
       title: "Page not found",
       description: "The page you're looking for doesn't exist or has been moved.",
+      backHome: "Back to home"
+    },
+    errors: {
+      title: "Oops! An error occurred",
+      description: "Something went wrong.",
       backHome: "Back to home"
     }
   }
