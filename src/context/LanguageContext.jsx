@@ -3,6 +3,8 @@ import { translations } from '../i18n/translations';
 
 const LanguageContext = createContext();
 
+export { LanguageContext };
+
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState('fr');
 

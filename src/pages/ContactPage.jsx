@@ -114,7 +114,7 @@ const ContactPage = () => {
             <div className="w-full lg:w-3/5">
               <Card className="shadow-xl">
                 <CardContent className="p-8">
-                  <h2 className="text-xl font-bold text-[#573D4E] mb-6">Discutons de votre projet</h2>
+                  <h2 className="text-xl font-bold text-[#573D4E] mb-6">{t('contact.title')}</h2>
                   <form onSubmit={handleSubmit} className="space-y-5" data-testid="contact-form">
 
                     {/* Prénom + Nom */}

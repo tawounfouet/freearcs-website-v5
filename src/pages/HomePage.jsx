@@ -563,8 +563,8 @@ const HomePage = () => {
               <p className="text-4xl font-bold text-[#2E9013] mb-1 font-raleway">
                 <Counter target={30} suffix="+" />
               </p>
-              <p className="text-xs uppercase tracking-widest text-[#2E9013]/60 font-semibold mb-2">Depuis 2020</p>
-              <p className="text-sm text-[#4B5563]">Plus de 30 projets cliniques supervisés</p>
+              <p className="text-xs uppercase tracking-widest text-[#2E9013]/60 font-semibold mb-2">{t('home.statsSince2020')}</p>
+              <p className="text-sm text-[#4B5563]">{t('home.statsProjects')}</p>
             </motion.div>
 
             {/* Carte 2 — Fidélisation */}
@@ -577,7 +577,7 @@ const HomePage = () => {
               <p className="text-4xl font-bold text-[#573D4E] mb-1 font-raleway">
                 <Counter target={65} suffix=" %" />
               </p>
-              <p className="text-sm text-[#4B5563]">Taux de fidélisation client</p>
+              <p className="text-sm text-[#4B5563]">{t('home.statsRetention')}</p>
             </motion.div>
 
             {/* Carte 3 — International */}
@@ -587,9 +587,9 @@ const HomePage = () => {
               transition={{ duration: 0.2 }}
               className="text-center p-8 bg-white border border-gray-100 rounded-2xl"
             >
-              <p className="text-4xl font-bold text-[#F5A617] mb-1 font-raleway">International</p>
-              <p className="text-xs uppercase tracking-widest text-[#F5A617]/60 font-semibold mb-2">Zones couvertes</p>
-              <p className="text-sm text-[#4B5563] leading-relaxed">Europe – Afrique – Amériques – Asie</p>
+              <p className="text-4xl font-bold text-[#F5A617] mb-1 font-raleway">{t('home.statsInternational')}</p>
+              <p className="text-xs uppercase tracking-widest text-[#F5A617]/60 font-semibold mb-2">{t('home.statsZonesCovered')}</p>
+              <p className="text-sm text-[#4B5563] leading-relaxed">{t('home.statsZonesText')}</p>
             </motion.div>
           </motion.div>
 

@@ -47,7 +47,7 @@ const LegalRepresentationPage = () => {
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-[1100px] mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#573D4E]">Le cadre réglementaire</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#573D4E]">{t('legalRepresentation.regulatoryTitle')}</h2>
             <div className="w-16 h-1 bg-[#2E9013] mx-auto mt-4"></div>
           </div>
 
