@@ -1,0 +1,53 @@
+name: Contact Pipeline
+
+on:
+  push:
+    paths:
+      - "api/**"
+      - "src/features/contact/**"
+      - "src/pages/ContactPage.jsx"
+      - "src/i18n/translations.js"
+      - "tests/contact-*.test.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/contact-pipeline.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "api/**"
+      - "src/features/contact/**"
+      - "src/pages/ContactPage.jsx"
+      - "src/i18n/translations.js"
+      - "tests/contact-*.test.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/contact-pipeline.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contact-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Contact tests
+        run: npm run test:contact
+
+      - name: Production build
+        run: npm run build
