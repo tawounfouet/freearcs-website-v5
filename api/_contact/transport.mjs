@@ -24,6 +24,41 @@ const requireEnv = (env, key) => {
   return value;
 };
 
+const getDeliveryTimeoutMs = (env) => {
+  const parsed = Number.parseInt(env.CONTACT_DELIVERY_TIMEOUT_MS, 10);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : 8000;
+};
+
+const fetchWithTimeout = async (
+  fetchImpl,
+  url,
+  options,
+  { env, provider },
+) => {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(
+    () => controller.abort(),
+    getDeliveryTimeoutMs(env),
+  );
+
+  try {
+    return await fetchImpl(url, {
+      ...options,
+      signal: controller.signal,
+    });
+  } catch (error) {
+    if (error?.name === 'AbortError') {
+      throw new ContactDeliveryError('Contact transport timed out.', {
+        provider,
+        status: 504,
+      });
+    }
+    throw error;
+  } finally {
+    clearTimeout(timeoutId);
+  }
+};
+
 export const buildBusinessText = ({ submissionId, payload, receivedAt }) => [
   'New contact request from the Freearcs Pharma Services website',
   '',
@@ -61,21 +96,26 @@ export const deliverWithResend = async (
 
   const subject = sanitizeHeaderValue(`[FPS Website] ${submission.payload.subject}`);
 
-  const response = await fetchImpl('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-      'Idempotency-Key': `fps-contact/${submission.submissionId}`,
+  const response = await fetchWithTimeout(
+    fetchImpl,
+    'https://api.resend.com/emails',
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+        'Idempotency-Key': `fps-contact/${submission.submissionId}`,
+      },
+      body: JSON.stringify({
+        from,
+        to,
+        reply_to: submission.payload.email,
+        subject,
+        text: buildBusinessText(submission),
+      }),
     },
-    body: JSON.stringify({
-      from,
-      to,
-      reply_to: submission.payload.email,
-      subject,
-      text: buildBusinessText(submission),
-    }),
-  });
+    { env, provider: 'resend' },
+  );
 
   if (!response.ok) {
     throw new ContactDeliveryError('Resend rejected the contact message.', {
@@ -119,27 +159,32 @@ export const deliverWithWebhook = async (
     headers.Authorization = `Bearer ${token}`;
   }
 
-  const response = await fetchImpl(url, {
-    method: 'POST',
-    headers,
-    body: JSON.stringify({
-      event: 'contact.submitted',
-      submissionId: submission.submissionId,
-      receivedAt: submission.receivedAt,
-      contact: {
-        firstName: submission.payload.firstName,
-        name: submission.payload.name,
-        email: submission.payload.email,
-        organisation: submission.payload.organisation,
-        fonction: submission.payload.fonction || '',
-        phone: submission.payload.phone || '',
-        subject: submission.payload.subject,
-        message: submission.payload.message,
-        locale: submission.payload.locale,
-        sourcePage: submission.payload.sourcePage || '/contact',
-      },
-    }),
-  });
+  const response = await fetchWithTimeout(
+    fetchImpl,
+    url,
+    {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        event: 'contact.submitted',
+        submissionId: submission.submissionId,
+        receivedAt: submission.receivedAt,
+        contact: {
+          firstName: submission.payload.firstName,
+          name: submission.payload.name,
+          email: submission.payload.email,
+          organisation: submission.payload.organisation,
+          fonction: submission.payload.fonction || '',
+          phone: submission.payload.phone || '',
+          subject: submission.payload.subject,
+          message: submission.payload.message,
+          locale: submission.payload.locale,
+          sourcePage: submission.payload.sourcePage || '/contact',
+        },
+      }),
+    },
+    { env, provider: 'webhook' },
+  );
 
   if (!response.ok) {
     throw new ContactDeliveryError('Contact webhook rejected the message.', {
