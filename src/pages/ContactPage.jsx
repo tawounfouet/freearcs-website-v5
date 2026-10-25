@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { Button } from '../components/ui/button';
@@ -6,11 +6,12 @@ import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { Label } from '../components/ui/label';
 import { Card, CardContent } from '../components/ui/card';
-import { Send, CheckCircle, Briefcase, Mail } from 'lucide-react';
+import { Send, CheckCircle, Briefcase, AlertCircle, Loader2 } from 'lucide-react';
 import SEO from '@/components/SEO';
+import { submitContact } from '../features/contact/contact.client';
 
 const ContactPage = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [searchParams] = useSearchParams();
 
   const SUBJECT_OPTIONS = [
@@ -31,25 +32,87 @@ const ContactPage = () => {
     phone: '',
     subject: searchParams.get('subject') || '',
     message: '',
+    website: '',
     rgpdConsent: false,
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [submissionState, setSubmissionState] = useState('idle');
+  const [submissionError, setSubmissionError] = useState('');
+  const statusRef = useRef(null);
+  const formStartedAtRef = useRef(Date.now());
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
+  const focusStatus = () => {
+    window.requestAnimationFrame(() => statusRef.current?.focus());
   };
 
-  if (submitted) {
+  const resetForm = () => {
+    setFormData({
+      firstName: '',
+      name: '',
+      email: '',
+      organisation: '',
+      fonction: '',
+      phone: '',
+      subject: searchParams.get('subject') || '',
+      message: '',
+      website: '',
+      rgpdConsent: false,
+    });
+    setSubmissionError('');
+    setSubmissionState('idle');
+    formStartedAtRef.current = Date.now();
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (submissionState === 'submitting') {
+      return;
+    }
+
+    setSubmissionError('');
+    setSubmissionState('submitting');
+
+    try {
+      await submitContact({
+        ...formData,
+        locale: language,
+        sourcePage: window.location.pathname,
+        formStartedAt: formStartedAtRef.current,
+      });
+
+      setSubmissionState('success');
+      focusStatus();
+    } catch (error) {
+      let message = t('contact.submitError');
+
+      if (error?.code === 'RATE_LIMITED') {
+        message = t('contact.submitRateLimited');
+      } else if (error?.code === 'TIMEOUT') {
+        message = t('contact.submitTimeout');
+      } else if (error?.code === 'CONTACT_UNAVAILABLE') {
+        message = t('contact.submitUnavailable');
+      }
+
+      setSubmissionError(message);
+      setSubmissionState('error');
+      focusStatus();
+    }
+  };
+
+  if (submissionState === 'success') {
     return (
       <div className="min-h-screen bg-[#F9FAFD] flex items-center justify-center" data-testid="contact-success">
-        <div className="max-w-lg mx-auto px-4 text-center">
+        <div
+          ref={statusRef}
+          tabIndex={-1}
+          role="status"
+          className="max-w-lg mx-auto px-4 text-center outline-none"
+        >
           <div className="w-20 h-20 rounded-full bg-[#EAF5E1] flex items-center justify-center mx-auto mb-6">
             <CheckCircle className="w-10 h-10 text-[#2E9013]" />
           </div>
@@ -58,7 +121,7 @@ const ContactPage = () => {
           </h1>
           <p className="text-[#4B5563] mb-6">{t('contact.successText')}</p>
           <Button
-            onClick={() => setSubmitted(false)}
+            onClick={resetForm}
             className="bg-[#2E9013] hover:bg-[#1a5a0b] text-white font-semibold px-6 py-3 rounded-full"
           >
             {t('contact.form.anotherMessage')}
@@ -115,7 +178,12 @@ const ContactPage = () => {
               <Card className="shadow-xl">
                 <CardContent className="p-8">
                   <h2 className="text-xl font-bold text-[#573D4E] mb-6">{t('contact.title')}</h2>
-                  <form onSubmit={handleSubmit} className="space-y-5" data-testid="contact-form">
+                  <form
+                    onSubmit={handleSubmit}
+                    className="space-y-5"
+                    data-testid="contact-form"
+                    aria-busy={submissionState === 'submitting'}
+                  >
 
                     {/* Prénom + Nom */}
                     <div className="grid md:grid-cols-2 gap-5">
@@ -123,6 +191,7 @@ const ContactPage = () => {
                         <Label htmlFor="firstName">{t('contact.firstName')} *</Label>
                         <Input
                           id="firstName" name="firstName" type="text" required
+                          autoComplete="given-name" maxLength={80}
                           placeholder={t('contact.firstNamePlaceholder')}
                           value={formData.firstName} onChange={handleChange}
                           className="border-gray-300 focus:border-[#2E9013] focus:ring-[#2E9013]"
@@ -133,6 +202,7 @@ const ContactPage = () => {
                         <Label htmlFor="name">{t('contact.form.name')} *</Label>
                         <Input
                           id="name" name="name" type="text" required
+                          autoComplete="family-name" maxLength={80}
                           placeholder={t('contact.form.namePlaceholder')}
                           value={formData.name} onChange={handleChange}
                           className="border-gray-300 focus:border-[#2E9013] focus:ring-[#2E9013]"
@@ -147,6 +217,7 @@ const ContactPage = () => {
                         <Label htmlFor="email">{t('contact.form.email')} *</Label>
                         <Input
                           id="email" name="email" type="email" required
+                          autoComplete="email" maxLength={254}
                           placeholder={t('contact.form.emailPlaceholder')}
                           value={formData.email} onChange={handleChange}
                           className="border-gray-300 focus:border-[#2E9013] focus:ring-[#2E9013]"
@@ -157,6 +228,7 @@ const ContactPage = () => {
                         <Label htmlFor="phone">{t('contact.form.phone')} <span className="text-[#6B7280] font-normal text-sm">(optionnel)</span></Label>
                         <Input
                           id="phone" name="phone" type="tel"
+                          autoComplete="tel" maxLength={40}
                           placeholder={t('contact.form.phonePlaceholder')}
                           value={formData.phone} onChange={handleChange}
                           className="border-gray-300 focus:border-[#2E9013] focus:ring-[#2E9013]"
@@ -171,6 +243,7 @@ const ContactPage = () => {
                         <Label htmlFor="organisation">{t('contact.organisation')} *</Label>
                         <Input
                           id="organisation" name="organisation" type="text" required
+                          autoComplete="organization" maxLength={150}
                           placeholder={t('contact.organisationPlaceholder')}
                           value={formData.organisation} onChange={handleChange}
                           className="border-gray-300 focus:border-[#2E9013] focus:ring-[#2E9013]"
@@ -181,6 +254,7 @@ const ContactPage = () => {
                         <Label htmlFor="fonction">{t('contact.fonction')}</Label>
                         <Input
                           id="fonction" name="fonction" type="text"
+                          autoComplete="organization-title" maxLength={150}
                           placeholder={t('contact.fonctionPlaceholder')}
                           value={formData.fonction} onChange={handleChange}
                           className="border-gray-300 focus:border-[#2E9013] focus:ring-[#2E9013]"
@@ -209,13 +283,33 @@ const ContactPage = () => {
                       <Label htmlFor="message">{t('contact.messageLabel')}</Label>
                       <Textarea
                         id="message" name="message" required rows={6}
-                        maxLength={1500}
+                        minLength={10} maxLength={1500}
                         placeholder={t('contact.messagePlaceholder')}
                         value={formData.message} onChange={handleChange}
                         className="border-gray-300 focus:border-[#2E9013] focus:ring-[#2E9013] resize-none"
                         data-testid="contact-message-input"
                       />
                       <p className="text-xs text-[#6B7280] text-right">{formData.message.length} / 1500</p>
+                      <p className="text-xs text-[#6B7280] leading-relaxed">
+                        {t('contact.sensitiveDataWarning')}
+                      </p>
+                    </div>
+
+                    {/* Honeypot — intentionally hidden from human users */}
+                    <div
+                      className="absolute left-[-10000px] top-auto w-px h-px overflow-hidden"
+                      aria-hidden="true"
+                    >
+                      <Label htmlFor="website">Website</Label>
+                      <Input
+                        id="website"
+                        name="website"
+                        type="text"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={formData.website}
+                        onChange={handleChange}
+                      />
                     </div>
 
                     {/* RGPD consent */}
@@ -235,13 +329,33 @@ const ContactPage = () => {
                       </Label>
                     </div>
 
+                    {submissionState === 'error' && (
+                      <div
+                        ref={statusRef}
+                        tabIndex={-1}
+                        role="alert"
+                        className="flex items-start gap-3 rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-800 outline-none"
+                        data-testid="contact-error"
+                      >
+                        <AlertCircle className="mt-0.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
+                        <p>{submissionError}</p>
+                      </div>
+                    )}
+
                     <Button
                       type="submit"
-                      className="w-full bg-[#2E9013] hover:bg-[#573D4E] text-white font-semibold py-6 rounded-full text-lg"
+                      disabled={submissionState === 'submitting'}
+                      className="w-full bg-[#2E9013] hover:bg-[#573D4E] text-white font-semibold py-6 rounded-full text-lg disabled:cursor-not-allowed disabled:opacity-70"
                       data-testid="contact-submit-btn"
                     >
-                      <Send className="w-5 h-5 mr-2" />
-                      {t('contact.submitButton')}
+                      {submissionState === 'submitting' ? (
+                        <Loader2 className="w-5 h-5 mr-2 animate-spin" aria-hidden="true" />
+                      ) : (
+                        <Send className="w-5 h-5 mr-2" aria-hidden="true" />
+                      )}
+                      {submissionState === 'submitting'
+                        ? t('contact.submitPending')
+                        : t('contact.submitButton')}
                     </Button>
 
                     <p className="text-[#6B7280] text-xs mt-3 italic leading-relaxed">
