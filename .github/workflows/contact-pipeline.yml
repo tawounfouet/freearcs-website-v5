@@ -1,6 +1,16 @@
 name: Contact Pipeline
 
 on:
+  push:
+    paths:
+      - "api/**"
+      - "src/features/contact/**"
+      - "src/pages/ContactPage.jsx"
+      - "src/i18n/translations.js"
+      - "tests/contact-*.test.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/contact-pipeline.yml"
   pull_request:
     branches:
       - main
