@@ -50,7 +50,8 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:contact": "node --test tests/contact-*.test.cjs"
   },
   "browserslist": {
     "production": [
