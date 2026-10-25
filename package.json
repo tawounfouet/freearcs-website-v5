@@ -51,7 +51,7 @@
     "start": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test:contact": "node --test tests/contact-*.test.cjs"
+    "test:contact": "node --test tests/contact-*.test.mjs"
   },
   "browserslist": {
     "production": [
